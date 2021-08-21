@@ -2,9 +2,9 @@ import { css, html, LitElement, unsafeCSS } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import style from './button.module.css';
 
-const componentName = 'delta-button'
+const buttonName = 'spark-button'
 
-@customElement(componentName)
+@customElement(buttonName)
 export class Button extends LitElement {
     static styles = css`
         ${unsafeCSS(style)}
@@ -21,4 +21,3 @@ export class Button extends LitElement {
         `;
     }
 }
-

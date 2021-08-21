@@ -1,4 +1,9 @@
+import '@material/mwc-button';
 import '../components/button/button';
+import '../components/SearchButton';
+import '../components/SortButton';
+import '@material/icon-button'
+
 
 export default {
     title: 'Example/Button',
@@ -8,30 +13,20 @@ export default {
     },
 };
 
-const Template = (args: any) => {
-    const btn = document.createElement('spark-button');
+const createButton = (buttonName: string) => (args: any) => {
+    const btn = document.createElement(buttonName);
     for (const arg in args) {
         btn[arg] = args[arg];
     }
     return btn;
 };
 
-export const Primary = Template.bind({});
-Primary.args = {
-    name: 'Button',
+export const SortButton = createButton('delta-sort-button').bind({});
+SortButton.args = {
+    label: 'Button',
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-    name: 'Button2',
-};
-
-export const Large = Template.bind({});
-Large.args = {
-    name: 'large',
-};
-
-export const Small = Template.bind({});
-Small.args = {
-    name: 'small',
+export const SearchButton = createButton('delta-search-button').bind({});
+SearchButton.args = {
+    label: 'Button',
 };
