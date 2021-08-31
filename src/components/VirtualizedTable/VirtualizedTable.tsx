@@ -1,11 +1,7 @@
 import { html, LitElement } from 'lit';
-import { connect } from 'lit-element-redux';
-import React, { useEffect, useState } from 'react';
-import { FixedSizeGrid } from 'react-window';
+import React from 'react';
 import { reverseDirection } from 'shared/utils';
-import { store } from 'Store';
 import { Column, FilterButton, HeadersBaseSettings, SortButton as SortButtonType, SortDirection } from '../../typings';
-import { InputField } from '../InputField';
 import './VirtualizedTable.css';
 import { VirtualizedTableAction } from './VirtualizedTableAction';
 
@@ -36,7 +32,7 @@ const сolumnWidth = 200;
 
 const componentName = 'delta-data-table';
 
-class VirtualizedTableBase extends connect(store)(LitElement) {
+class VirtualizedTableBase extends LitElement {
     getSortButton = (sortButton: SortButtonType | false | undefined, name: any, handleSortClick: () => void) => {
         const activeButton = name === this.props.state.sortBy;
 
@@ -61,7 +57,7 @@ class VirtualizedTableBase extends connect(store)(LitElement) {
         onChange: (event: React.ChangeEvent<HTMLInputElement>) => void,
         onClose: () => void,
     ) => {
-        const defaultInput = <InputField onClose={onClose} onChange={onChange} />;
+        const defaultInput = html`<delta-input-field @onClose=${onClose} @onChange=${onChange} />`;
         const defaultButton = html`<delta-search-button @onClick=${() => actions.filterNameChanged(name as string)} />`;
         const isActiveButton = name === this.props.state.filterName;
         if (filterButton === false) {
@@ -106,28 +102,12 @@ class VirtualizedTableBase extends connect(store)(LitElement) {
             const sortElement = this.getSortButton(sortButton, header.text, handleSortClick);
             const filterElement = this.getFilterButton(filterButton, header.text, handleFilterValueChanged, onClose);
 
-            return (
-                <div key={header.text.toString()}>
-                    {header.text}
-                    {filterElement}
-                    {sortElement}
-                </div>
-            );
+            return html`<div key=${header.text.toString()}>${header.text} ${filterElement} ${sortElement}</div>`;
         });
 
-        return (
-            <div
-                style={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    zIndex: 1,
-                    width: сolumnWidth * headerElements.length,
-                    justifyContent: 'space-around',
-                }}
-            >
-                {headerElements}
-            </div>
-        );
+        const divStyles = { width: сolumnWidth * headerElements.length };
+
+        return html` <div .style=${divStyles}>${headerElements}</div>`;
     };
 
     renderCell = (columns: Column[], records: any[]) => ({ columnIndex, data, rowIndex, style }: any) => {
@@ -135,27 +115,12 @@ class VirtualizedTableBase extends connect(store)(LitElement) {
         const className = hoveredRowIndex === rowIndex ? 'CellHovered' : 'Cell';
         const columnName = columns[columnIndex].text;
 
-        return (
-            <div className={className} onMouseEnter={() => setHoveredRowIndex(rowIndex)} style={style}>
-                {this.props.state.data[rowIndex][columnName]}
-            </div>
-        );
+        return html`<div className=${className} @onMouseEnter=${() => setHoveredRowIndex(rowIndex)} style=${style}>
+            ${this.props.state.data[rowIndex][columnName]}
+        </div>`;
     };
 
-    renderBody = (columns: Column[], records: any[]): React.ReactNode => (
-        <FixedSizeGrid
-            style={{ zIndex: 0 }}
-            rowHeight={100}
-            columnCount={this.props.columns.length}
-            columnWidth={сolumnWidth}
-            height={800}
-            itemData={{ hoveredRowIndex, setHoveredRowIndex }}
-            rowCount={this.props.state.data.length}
-            width={1100}
-        >
-            {this.renderCell(columns, records)}
-        </FixedSizeGrid>
-    );
+    renderBody = (columns: Column[], records: any[]): React.ReactNode => this.renderCell(columns, records);
 
     render() {
         const [hoveredRowIndex, setHoveredRowIndex] = useState(null);
@@ -164,12 +129,10 @@ class VirtualizedTableBase extends connect(store)(LitElement) {
             actions.getList();
         }, [actions]);
 
-        return (
-            <>
-                {this.renderHeaders(this.props.columns as any)}
-                {this.renderBody(this.props.columns, this.props.state.data)}
-            </>
-        );
+        return html` <div>
+            ${this.renderHeaders(this.props.columns as any)}
+            ${this.renderBody(this.props.columns, this.props.state.data)}
+        </div>`;
     }
 }
 
@@ -177,9 +140,8 @@ const VirtualizedTable = connect(mapStateToProps, mapDispatchToProps)(Virtualize
 
 customElements.define(componentName, VirtualizedTable);
 
-
 declare global {
     interface HTMLElementTagNameMap {
-        [componentName]: VirtualizedTableBase
+        [componentName]: VirtualizedTableBase;
     }
 }

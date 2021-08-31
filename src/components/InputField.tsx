@@ -1,5 +1,6 @@
-import { IconButton, Input } from '@material-ui/core';
-import CloseIcon from '@material-ui/icons/Close';
+import '@material/mwc-textfield';
+import { html, LitElement } from 'lit';
+import { customElement, property } from 'lit/decorators.js';
 import React from 'react';
 
 export interface InputFieldProps {
@@ -7,13 +8,26 @@ export interface InputFieldProps {
     onClose: () => void;
 }
 
-export const InputField = (props: InputFieldProps) => {
-    return (
-        <>
-            <Input style={{ marginLeft: 5}} onChange={props.onChange} />
-            <IconButton onClick={props.onClose}>
-                <CloseIcon />
-            </IconButton>
-        </>
-    );
-};
+const componentName = 'delta-input-field';
+
+@customElement(componentName)
+export class InputField extends LitElement {
+    @property()
+    onClick: () => any = () => {};
+
+    @property()
+    onChange: () => any = () => {};
+
+    render() {
+        return html`
+            <mwc-textfield onChange=${this.onChange} label="Standard"></mwc-textfield>
+            <mwc-icon-button onClick="{props.onClose}" icon="close" @onclick=${this.onClick}></mwc-icon-button>
+        `;
+    }
+}
+
+declare global {
+    interface HTMLElementTagNameMap {
+        [componentName]: InputField;
+    }
+}

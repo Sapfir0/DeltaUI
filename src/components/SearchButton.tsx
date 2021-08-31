@@ -1,7 +1,8 @@
+import '@material/mwc-icon-button';
 import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { MouseEventHandler } from 'react';
-
+import './material.css';
 export interface SearchButtonProps {
     onClick: MouseEventHandler;
 }
@@ -14,7 +15,7 @@ export class SearchButton extends LitElement {
     onClick: MouseEventHandler = () => {};
 
     render() {
-        return html`<mwc-button @onclick=${this.onClick} icon="code" trailingIcon></mwc-button>`;
+        return html`<mwc-icon-button icon="code" @onclick=${this.onClick} disabled></mwc-icon-button>`;
     }
 }
 

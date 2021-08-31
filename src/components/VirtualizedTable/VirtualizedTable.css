@@ -9,3 +9,11 @@
 .CellHovered {
   background-color: #f8f8f0;
 }
+
+.Column {
+  display: flex;
+  flex-direction: 'row';
+  z-index: 1;
+  justify-content: 'space-around';
+}
+

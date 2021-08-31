@@ -1,3 +1,4 @@
+import '@material/mwc-icon-button';
 import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { MouseEventHandler } from 'react';
@@ -25,17 +26,17 @@ export class SortButton extends LitElement {
     render() {
         const icon = this.direction === 'desc' ? `ArrowDownward` : `ArrowUpward`;
 
-        return html`<mwc-button
-            @onclick=${this.onClick}
+        return html`<mwc-icon-button
             icon="${icon}"
             color=${this.selected ? 'primary' : 'default'}
-            trailingIcon
-        ></mwc-button>`;
+            @onclick=${this.onClick}
+            disabled
+        ></mwc-icon-button>`;
     }
 }
 
 declare global {
     interface HTMLElementTagNameMap {
-        [componentName]: SortButton
+        [componentName]: SortButton;
     }
 }
