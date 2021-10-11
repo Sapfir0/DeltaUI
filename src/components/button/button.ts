@@ -1,9 +1,11 @@
-import { boolean } from 'fp-ts';
 import { css, html, LitElement, unsafeCSS } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { ClassInfo } from 'lit/directives/class-map.js';
+import { customElement } from 'lit/decorators.js';
 import style from './button.module.scss';
 
 export const ButtonName = 'delta-button' as const;
+
+type ButtonSize = 'S' | 'M' | 'L';
 
 export interface ButtonProps {
     text: string;
@@ -18,9 +20,21 @@ export class Button extends LitElement {
 
     text: string = '';
     disabled: boolean = false;
+    size: ButtonSize = 'M';
+    onclick: () => void = () => {};
 
-    render() {
-        return html`<button .disabled=${this.disabled} class="my-button">${this.text}</button> `;
+    protected getRenderClasses(): ClassInfo {
+        return {};
+    }
+
+    protected render() {
+        return html`<button
+            @onclick=${this.onclick}
+            .disabled=${this.disabled}
+            class="my-button ${this.getRenderClasses()}"
+        >
+            ${this.text}
+        </button> `;
     }
 }
 

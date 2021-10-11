@@ -1,10 +1,6 @@
 @import "../../styles/vars.scss";
 
-.my-button {
-    background-color: $primary-color;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    color: white;
+.textfield {
+    color: $primary-color;
+    background-color: $accent-color;
 }
