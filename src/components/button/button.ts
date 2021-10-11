@@ -1,10 +1,16 @@
+import { boolean } from 'fp-ts';
 import { css, html, LitElement, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import style from './button.module.css';
+import style from './button.module.scss';
 
-export const componentName = 'delta-button' as const;
+export const ButtonName = 'delta-button';
 
-@customElement(componentName)
+export interface ButtonProps {
+    text: string;
+    disabled?: boolean;
+}
+
+@customElement(ButtonName)
 export class Button extends LitElement {
     constructor() {
         super();
@@ -22,8 +28,9 @@ export class Button extends LitElement {
     }
 }
 
+
 declare global {
     interface HTMLElementTagNameMap {
-        [typeof componentName]: Button;
+        'delta-button': Button;
     }
 }

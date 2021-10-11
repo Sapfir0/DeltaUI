@@ -1,29 +1,25 @@
 import { css, html, LitElement, unsafeCSS } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
-import style from './button.module.css';
+import style from './button.module.scss';
 
-const componentName = 'delta-button'
+export const IconName = 'delta-icon';
 
-@customElement(componentName)
-export class Button extends LitElement {
+@customElement(IconName)
+export class Icon extends LitElement {
     static styles = css`
         ${unsafeCSS(style)}
     `;
 
     @property()
-    text: string = ''
+    text: string = '';
 
     render() {
-        return html`
-            <button class="my-button" part="button">${this.text}</button>
-        `;
+        return html` <button class="my-button" part="button">${this.text}</button> `;
     }
-
-
 }
 
 declare global {
     interface HTMLElementTagNameMap {
-        [typeof componentName]: Button;
+        'delta-icon': Icon;
     }
 }

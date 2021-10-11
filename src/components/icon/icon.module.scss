@@ -1,5 +1,7 @@
+@import '../../styles/vars.scss';
+
 .my-button {
-    background-color: royalblue;
+    background-color: $primary-color;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 5px;

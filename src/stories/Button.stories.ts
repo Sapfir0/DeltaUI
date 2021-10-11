@@ -1,38 +1,18 @@
 import '../components/button/button';
-import { componentName } from '../components/button/button';
+import { ButtonName, ButtonProps } from '../components/button/button';
+import { Meta, Story } from '@storybook/web-components';
+import { TemplateComponent } from './template';
 
 export default {
     title: 'Example/Button',
     argTypes: {
-        backgroundColor: { control: 'color' },
         onClick: { action: 'onClick' },
     },
-};
+} as Meta;
 
-const Template = (args: any) => {
-    const btn = document.createElement(componentName);
-    for (const arg in args) {
-        btn[arg] = args[arg];
-    }
-    return btn;
-};
+const Template: Story<ButtonProps> = TemplateComponent(ButtonName);
 
-export const Primary = Template.bind({});
-Primary.args = {
+export const Button = Template.bind({ text: 'Empty' });
+Button.args = {
     text: 'Save',
-};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-    text: 'Button2',
-};
-
-export const Large = Template.bind({});
-Large.args = {
-    text: 'large',
-};
-
-export const Small = Template.bind({});
-Small.args = {
-    text: 'small',
 };
