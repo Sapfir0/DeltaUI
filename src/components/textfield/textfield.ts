@@ -17,7 +17,7 @@ export class Textfield extends LitElement {
     placeholder: string = '';
 
     protected render() {
-        return html` <input placeholder=${this.placeholder} /> `;
+        return html` <input class="textfield" placeholder=${this.placeholder} /> `;
     }
 }
 

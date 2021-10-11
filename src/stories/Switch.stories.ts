@@ -1,4 +1,3 @@
-import { ButtonName, ButtonProps } from '../components/button/button';
 import { Meta, Story } from '@storybook/web-components';
 import { TemplateComponent } from './template';
 import { SwitchName, SwitchProps } from '../components/switch/switch';

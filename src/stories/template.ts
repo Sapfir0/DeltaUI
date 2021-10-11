@@ -7,7 +7,7 @@ export const TemplateComponent =
         const element = document.createElement(componentName);
 
         for (const arg in args) {
-            element[arg] = args[arg];
+            element[arg as string] = args[arg];
         }
         return element;
     };
