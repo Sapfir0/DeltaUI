@@ -1,4 +1,5 @@
 import '../components/button/button';
+import { componentName } from '../components/button/button';
 
 export default {
     title: 'Example/Button',
@@ -9,7 +10,7 @@ export default {
 };
 
 const Template = (args: any) => {
-    const btn = document.createElement('spark-button');
+    const btn = document.createElement(componentName);
     for (const arg in args) {
         btn[arg] = args[arg];
     }
@@ -18,20 +19,20 @@ const Template = (args: any) => {
 
 export const Primary = Template.bind({});
 Primary.args = {
-    name: 'Button',
+    text: 'Save',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-    name: 'Button2',
+    text: 'Button2',
 };
 
 export const Large = Template.bind({});
 Large.args = {
-    name: 'large',
+    text: 'large',
 };
 
 export const Small = Template.bind({});
 Small.args = {
-    name: 'small',
+    text: 'small',
 };

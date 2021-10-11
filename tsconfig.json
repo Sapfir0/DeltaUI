@@ -1,46 +1,58 @@
 {
   "compilerOptions": {
     "target": "es2017",
-    "module": "esnext",
-    "outDir": "build",
-    "rootDir": ".",
-    "strict": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": false,
-    "jsx": "react",
-    "lib": [
-      "dom",
-      "es6"
-    ],
-    "skipLibCheck": false,
-    "allowSyntheticDefaultImports": true,
+    "module": "es2015",
     "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "useDefineForClassFields": false,
-    "noEmit": false,
-    "removeComments": true,
+    "lib": ["es2017", "dom", "dom.iterable"],
+    "declaration": true,
     "sourceMap": true,
-    "baseUrl": "src",
-    "types": [
-      "node",
-      "reflect-metadata"
-    ],
+    "inlineSources": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "useDefineForClassFields": false,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "strictNullChecks": true,
-    "strictBindCallApply": true,
-    "strictFunctionTypes": true,
-    "strictPropertyInitialization": true,
-    "alwaysStrict": true,
-    "noImplicitAny": true,
-    "noImplicitThis": true
+    "skipLibCheck": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "outDir": "./build",
+    "composite": true,
+    "importHelpers": true,
+    "plugins": [
+      {
+        "name": "ts-lit-plugin",
+        "rules": {
+          "no-unknown-tag-name": "error",
+          "no-unclosed-tag": "error",
+          "no-unknown-property": "error",
+          "no-unintended-mixed-binding": "error",
+          "no-invalid-boolean-binding": "error",
+          "no-expressionless-property-binding": "error",
+          "no-noncallable-event-binding": "error",
+          "no-boolean-in-attribute-binding": "error",
+          "no-complex-attribute-binding": "error",
+          "no-nullable-attribute-binding": "error",
+          "no-incompatible-type-binding": "error",
+          "no-invalid-directive-binding": "error",
+          "no-incompatible-property-type": "error",
+          "no-unknown-property-converter": "error",
+          "no-invalid-attribute-name": "error",
+          "no-invalid-tag-name": "error",
+          "no-property-visibility-mismatch": "error",
+
+          "no-unknown-attribute": "off",
+          "no-unknown-event": "off",
+          "no-unknown-slot": "off",
+          "no-invalid-css": "off"
+        }
+      }
+    ]
   },
   "include": [
-    "src"
+    "src",
+    "node_modules/lit-scss-loader/types.d.ts"
+
   ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+  "exclude": [],
 }

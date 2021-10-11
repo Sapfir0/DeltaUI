@@ -19,8 +19,13 @@ module.exports = {
             },
             {
                 ...cssRule,
-                test: /\.module\.css$/,
-                use: ['to-string-loader', 'css-loader'],
+                test: /\.css|\.s(c|a)ss$/,
+                use: [{
+                  loader: 'lit-scss-loader',
+                  options: {
+                    minify: true, // defaults to false
+                  },
+                }, 'extract-loader', 'css-loader', 'sass-loader'],
             },
         ];
 

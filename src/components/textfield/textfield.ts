@@ -1,25 +1,25 @@
 import { css, html, LitElement, unsafeCSS } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { customElement, property, state } from 'lit/decorators.js';
 import style from './button.module.css';
 
-export const componentName = 'delta-button' as const;
+const componentName = 'delta-button'
 
 @customElement(componentName)
 export class Button extends LitElement {
-    constructor() {
-        super();
-    }
-
     static styles = css`
         ${unsafeCSS(style)}
     `;
 
-    text: string = '';
-    disabled: boolean = false;
+    @property()
+    text: string = ''
 
     render() {
-        return html`<button .disabled=${this.disabled} class="my-button">${this.text}</button> `;
+        return html`
+            <input > </input> 
+        `;
     }
+
+
 }
 
 declare global {
