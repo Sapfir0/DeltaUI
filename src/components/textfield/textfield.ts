@@ -1,29 +1,23 @@
 import { css, html, LitElement, unsafeCSS } from 'lit';
-import { customElement, property, state } from 'lit/decorators.js';
-import style from './button.module.css';
+import { customElement, property } from 'lit/decorators.js';
+import style from './textfield.module.scss';
 
-const componentName = 'delta-button'
+export const TextFieldName = 'delta-textfield' as const;
 
-@customElement(componentName)
-export class Button extends LitElement {
+export interface TextfieldProps {}
+
+@customElement(TextFieldName)
+export class Textfield extends LitElement {
     static styles = css`
         ${unsafeCSS(style)}
     `;
-
-    @property()
-    text: string = ''
-
-    render() {
-        return html`
-            <input > </input> 
-        `;
+    protected render() {
+        return html` <input /> `;
     }
-
-
 }
 
 declare global {
     interface HTMLElementTagNameMap {
-        [typeof componentName]: Button;
+        [TextFieldName]: Textfield;
     }
 }

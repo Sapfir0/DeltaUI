@@ -3,7 +3,7 @@ import { css, html, LitElement, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import style from './button.module.scss';
 
-export const ButtonName = 'delta-button';
+export const ButtonName = 'delta-button' as const;
 
 export interface ButtonProps {
     text: string;
@@ -12,10 +12,6 @@ export interface ButtonProps {
 
 @customElement(ButtonName)
 export class Button extends LitElement {
-    constructor() {
-        super();
-    }
-
     static styles = css`
         ${unsafeCSS(style)}
     `;
@@ -28,9 +24,8 @@ export class Button extends LitElement {
     }
 }
 
-
 declare global {
     interface HTMLElementTagNameMap {
-        'delta-button': Button;
+        [ButtonName]: Button;
     }
 }
