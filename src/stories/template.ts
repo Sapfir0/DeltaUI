@@ -1,6 +1,5 @@
 import { ComponentNames } from '../components/meta';
 
-
 export const TemplateComponent =
     (componentName: ComponentNames) =>
     <PropType extends {}>(args: PropType) => {

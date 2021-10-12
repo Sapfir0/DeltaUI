@@ -6,6 +6,7 @@ export default {
     title: 'Example/Switch',
     argTypes: {
         onClick: { action: 'onClick' },
+        disabled: { type: 'boolean' },
     },
 } as Meta;
 
@@ -14,4 +15,5 @@ const Template: Story<SwitchProps> = TemplateComponent(SwitchName);
 export const Switch = Template.bind({ text: 'Empty' });
 Switch.args = {
     text: 'Save',
+    disabled: false
 };

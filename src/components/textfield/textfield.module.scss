@@ -1,6 +1,20 @@
-@import "../../styles/vars.scss";
+@import '../../styles/vars.scss';
 
 .textfield {
-    color: $primary-color;
+    color: $white-color;
     background-color: $accent-color;
+    padding: 5px;
+    border: none;
+}
+
+// .textfield:valid {
+//     border-color: $green-color;
+// }
+
+// .textfield:invalid {
+//     border-color: $red-color;
+// }
+
+.icon {
+    content: '\f007';
 }
