@@ -2,11 +2,8 @@ import { css, html, LitElement, unsafeCSS } from 'lit';
 import { ClassInfo } from 'lit/directives/class-map.js';
 import { customElement } from 'lit/decorators.js';
 import style from './button.module.scss';
-import { boolean } from 'fp-ts';
 
 export const ButtonName = 'delta-button' as const;
-
-type ButtonSize = 'S' | 'M' | 'L';
 
 export interface ButtonProps {
     text: string;
