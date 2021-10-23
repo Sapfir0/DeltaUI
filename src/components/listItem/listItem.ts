@@ -4,7 +4,9 @@ import style from './listItem.module.scss';
 
 export const ListItemName = 'delta-list-item' as const;
 
-export interface ListItemProps {}
+export interface ListItemProps {
+    onClick?: () => void;
+}
 
 @customElement(ListItemName)
 export class ListItem extends LitElement {
@@ -12,8 +14,12 @@ export class ListItem extends LitElement {
         ${unsafeCSS(style)}
     `;
 
+    onClick = () => {};
+
     protected render() {
-        return html`<div>name</div>`;
+        return html`<div class="list-item">
+            <button class="list-item__button" @onclick=${this.onClick}><slot></slot></button>
+        </div>`;
     }
 }
 

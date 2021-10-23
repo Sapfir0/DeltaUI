@@ -1,6 +1,8 @@
 @import '../../styles/vars.scss';
+@import '../../styles/fonts.scss';
 
 .textfield {
+    font-family: 'Roboto';
     color: $white-color;
     background-color: $accent-color;
     padding: 5px;

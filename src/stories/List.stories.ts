@@ -9,11 +9,17 @@ export default {
     argTypes: {},
 } as Meta;
 
+const ListItemsTemplate = ['Overview', 'Devices', 'Analytics', 'Rules', 'Gallery', 'History', 'Settings'];
+
 const createList = (args) => {
-    const items = document.createElement(ListItemName);
-    console.log(items);
+    const items = [];
+    for (const listItemTemplate of ListItemsTemplate) {
+        items.push(`<${ListItemName}> ${listItemTemplate} </${ListItemName}>`);
+    }
+
     const element = document.createElement(ListName);
-    element.appendChild(items);
+    element.innerHTML = items.toString().replaceAll(',', '');
+
     for (const arg in args) {
         element[arg as string] = args[arg];
     }

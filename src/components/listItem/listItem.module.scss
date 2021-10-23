@@ -1,0 +1,21 @@
+@import '../../styles/vars.scss';
+@import '../../styles/fonts.scss';
+
+.list-item {
+    border-left: 8px solid;
+    border-left-color: transparent;
+    padding-left: 20px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    font-family: 'Roboto';
+}
+
+.list-item:hover {
+    border-left-color: $primary-color;
+    background-color: $bg-color;
+}
+
+.list-item__button {
+    background-color: transparent;
+    border: none;
+}

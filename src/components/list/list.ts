@@ -14,7 +14,6 @@ export class List extends LitElement {
 
     protected render() {
         return html`<div>
-            мой список
             <slot></slot>
         </div>`;
     }

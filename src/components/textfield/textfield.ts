@@ -9,6 +9,7 @@ export interface TextfieldProps {
     placeholder?: string;
     pattern?: string;
     type?: InputType;
+    value?: string;
 }
 
 @customElement(TextFieldName)
@@ -19,10 +20,11 @@ export class Textfield extends LitElement {
 
     placeholder: string = '';
     pattern: string = '';
+    value: string = '';
 
     protected render() {
         return html`<div>
-            <input class="textfield" pattern=${this.pattern} placeholder=${this.placeholder} />
+            <input class="textfield" pattern=${this.pattern} value=${this.value} placeholder=${this.placeholder} />
             <span class="material-icons">face</span>
         </div>`;
     }

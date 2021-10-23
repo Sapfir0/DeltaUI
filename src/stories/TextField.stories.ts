@@ -15,4 +15,5 @@ const Template: Story<TextfieldProps> = TemplateComponent(TextFieldName);
 export const Textfield = Template.bind({});
 Textfield.args = {
     placeholder: '',
+    value: 'Template',
 };
