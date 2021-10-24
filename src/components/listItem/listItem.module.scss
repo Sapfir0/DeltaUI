@@ -13,7 +13,7 @@ $padding: 10px;
 
 .list-item:hover {
     border-left-color: $primary-color;
-    background: linear-gradient(to right, $bg-color 10%, transparent 90%);
+    background: linear-gradient(to right, $accent-color 10%, transparent 90%);
 }
 
 .list-item__button {

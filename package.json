@@ -13,6 +13,7 @@
         "@spectrum-web-components/tab": "^0.3.10",
         "api_interaction_services": "^0.2.12",
         "axios": "^0.21.1",
+        "chart.js": "^3.6.0",
         "fp-ts": "^2.10.5",
         "inversify": "^5.1.1",
         "lit": "^2.0.0-rc.1",
