@@ -9,12 +9,27 @@ export default {
     argTypes: {},
 } as Meta;
 
-const ListItemsTemplate = ['Overview', 'Devices', 'Analytics', 'Rules', 'Gallery', 'History', 'Settings'];
+const ListItemsTemplate = ['Overview', 'Devices', 'Analytics', 'Rules', 'Gallery', 'History', 'Settings'].map(
+    (name, i) => ({ id: i, text: name }),
+);
+
+let selectedIndex = 0;
+const setSelectedIndex = (index: number) => () => {
+    selectedIndex = index;
+    console.log(selectedIndex);
+};
 
 const createList = (args) => {
-    const items = [];
+    const items: string[] = [];
     for (const listItemTemplate of ListItemsTemplate) {
-        items.push(`<${ListItemName}> ${listItemTemplate} </${ListItemName}>`);
+        const onClick = setSelectedIndex(listItemTemplate.id);
+        items.push(
+            `<${ListItemName} 
+            selected="${listItemTemplate.id === selectedIndex}" 
+            @onClick="${onClick}" > 
+                ${listItemTemplate.text} 
+            </${ListItemName}>`,
+        );
     }
 
     const element = document.createElement(ListName);
