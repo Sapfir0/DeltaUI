@@ -1,6 +1,4 @@
 import { Meta, Story } from '@storybook/web-components';
-import { TemplateComponent } from './template';
-import { ProgressBarName, ProgressBarProps } from '../components/progressBar/progressBar';
 import { CardName, CardProps } from '../components/card/card';
 
 export default {
@@ -8,20 +6,16 @@ export default {
     argTypes: {},
 } as Meta;
 
-const createList = (args) => {
-    const element = document.createElement(ListName);
-    element.innerHTML = items.toString().replaceAll(',', '');
+const createCard = (args: CardProps) => {
+    const element = `<${CardName}> ${args.header} ${args.content}  </${CardName}>`;
 
-    for (const arg in args) {
-        element[arg as string] = args[arg];
-    }
     return element;
 };
 
-const Template: Story<CardProps> = TemplateComponent(CardName);
+const Template: Story<CardProps> = createCard;
 
 export const Card = Template.bind({});
 Card.args = {
-    value: `<div slot="header"> </div>`,
-    max: 100,
+    header: `<div slot="header"> Header </div>`,
+    content: `<div slot="content"> Content </div>`,
 };

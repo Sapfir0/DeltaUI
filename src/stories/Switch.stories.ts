@@ -14,6 +14,5 @@ const Template: Story<SwitchProps> = TemplateComponent(SwitchName);
 
 export const Switch = Template.bind({ text: 'Empty' });
 Switch.args = {
-    text: 'Save',
     disabled: false
 };

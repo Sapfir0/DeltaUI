@@ -5,7 +5,7 @@ export const parameters = {
         values: [
             {
                 name: 'black',
-                value: '#2f3b52',
+                value: '#242e42',
             },
         ],
     },

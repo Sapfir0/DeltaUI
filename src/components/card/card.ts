@@ -4,7 +4,10 @@ import style from './card.module.scss';
 
 export const CardName = 'delta-card' as const;
 
-export interface CardProps {}
+export interface CardProps {
+    header?: string;
+    content?: string;
+}
 
 @customElement(CardName)
 export class Card extends LitElement {
@@ -13,7 +16,7 @@ export class Card extends LitElement {
     `;
 
     protected render() {
-        return html`<div>
+        return html`<div class="card">
             <slot name="header"></slot>
             <slot name="content"></slot>
         </div>`;

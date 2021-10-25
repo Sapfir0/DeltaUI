@@ -1,6 +1,6 @@
 import { Meta, Story } from '@storybook/web-components';
 import { TemplateComponent } from './template';
-import { DoughnutName, DoughnutProps } from '../components/charts/donutChart';
+import { DoughnutName, DoughnutProps } from '../components/charts/Doughnut';
 
 export default {
     title: 'Example/Doughnut',

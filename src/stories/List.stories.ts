@@ -1,6 +1,5 @@
 import '../components/button/button';
 import { Meta, Story } from '@storybook/web-components';
-import { TemplateComponent } from './template';
 import { ListName, ListProps } from '../components/list/list';
 import { ListItemName } from '../components/listItem/listItem';
 

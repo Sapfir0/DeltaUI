@@ -1,6 +1,6 @@
 import { ButtonName } from './button/button';
 import { CardName } from './card/card';
-import { DoughnutName } from './charts/donutChart';
+import { DoughnutName } from './charts/Doughnut';
 import { IconName } from './icon/icon';
 import { ListName } from './list/list';
 import { ListItemName } from './listItem/listItem';
