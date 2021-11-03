@@ -1,12 +1,9 @@
-import { Chart } from 'chart.js';
 import { html, LitElement } from 'lit';
-import { customElement } from 'lit/decorators.js';
-import 'chartjs-web-components';
+// import 'chartjs-web-components';
 
 export const DoughnutName = 'delta-doughnut' as const;
 
 export interface DoughnutProps {}
-
 
 class Doughnut extends LitElement {
     public data = {
@@ -22,7 +19,7 @@ class Doughnut extends LitElement {
     };
     public options = {};
     public type = 'line';
-    
+
     public render() {
         const { type, data, options } = this;
         return html` <base-chart type="${type}" .data="${data}" .options="${options}"></base-chart> `;

@@ -1,4 +1,3 @@
-import { boolean } from 'fp-ts';
 import { css, html, LitElement, unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import style from './switch.module.scss';

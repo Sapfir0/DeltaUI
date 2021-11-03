@@ -1,7 +1,6 @@
 import { css, html, LitElement, unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import style from './progressBar.module.scss';
-import { classMap } from 'lit/directives/class-map.js';
 
 export const ProgressBarName = 'delta-progress' as const;
 
