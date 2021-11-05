@@ -2,4 +2,13 @@
 
 .card {
     background-color: $content-bg-color;
+    padding-left: 10px;
+}
+
+.card__header {
+    color: $white-color;
+}
+
+.card__content {
+    color: $grey-color;
 }

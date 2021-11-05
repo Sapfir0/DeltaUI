@@ -17,8 +17,8 @@ export class Card extends LitElement {
 
     protected render() {
         return html`<div class="card">
-            <slot name="header"></slot>
-            <slot name="content"></slot>
+            <h2 class="card__header"><slot name="header"></slot></h2>
+            <div class="card__content"><slot name="content"></slot></div>
         </div>`;
     }
 }
