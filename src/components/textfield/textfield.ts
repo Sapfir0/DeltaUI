@@ -25,7 +25,7 @@ export class Textfield extends LitElement {
     protected render() {
         return html`<div>
             <input class="textfield" pattern=${this.pattern} value=${this.value} placeholder=${this.placeholder} />
-            <span class="material-icons">face</span>
+            <span class="material-icons-outlined">done</span>
         </div>`;
     }
 }

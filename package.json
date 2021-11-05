@@ -6,11 +6,11 @@
         "build:prod": "rollup",
         "start": "tsc",
         "deploy-storybook": "storybook-to-ghpages",
-        "storybook": "start-storybook -p 6006",
-        "build-storybook": "build-storybook"
+        "storybook": "start-storybook -s ./public -p 6006",
+        "build-storybook": "build-storybook",
+        "generateIconsEnum": "node ./src/scripts/generateListOfAvailableIcons.js"
     },
     "dependencies": {
-        "@spectrum-web-components/icon": "^0.9.11",
         "@spectrum-web-components/tab": "^0.3.10",
         "api_interaction_services": "^0.2.12",
         "axios": "^0.21.1",

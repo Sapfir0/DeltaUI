@@ -14,6 +14,5 @@ const Template: Story<DoughnutProps> = TemplateComponent(DoughnutName);
 
 export const Doughnut = Template.bind({ text: 'Empty' });
 Doughnut.args = {
-    text: 'Save',
-    disabled: false,
+
 };

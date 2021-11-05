@@ -3,9 +3,11 @@
 .card {
     background-color: $content-bg-color;
     padding-left: 10px;
+    padding-bottom: 10px;
 }
 
 .card__header {
+    padding-top: 10px;
     color: $white-color;
 }
 

@@ -10,7 +10,6 @@ import { TextFieldName } from './textfield/textfield';
 
 export const components = [
     IconName,
-    DoughnutName,
     CardName,
     ButtonName,
     ProgressBarName,
@@ -18,6 +17,7 @@ export const components = [
     TextFieldName,
     ListName,
     ListItemName,
+    DoughnutName,
 ] as const;
 
 export type ComponentNames = typeof components[number];
