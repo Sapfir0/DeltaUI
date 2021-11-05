@@ -3,12 +3,12 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "build:prod": "rollup",
+        "build-storybook": "build-storybook -s public",
+        "deploy": "gh-pages -d storybook-static",
+        "generateIconsEnum": "node ./src/scripts/generateListOfAvailableIcons.js",
+        "predeploy": "npm run build-storybook",
         "start": "tsc",
-        "deploy-storybook": "storybook-to-ghpages",
-        "storybook": "start-storybook -s ./public -p 6006",
-        "build-storybook": "build-storybook",
-        "generateIconsEnum": "node ./src/scripts/generateListOfAvailableIcons.js"
+        "storybook": "start-storybook -s ./public -p 6006"
     },
     "dependencies": {
         "@spectrum-web-components/tab": "^0.3.10",
@@ -26,14 +26,13 @@
         "@storybook/addon-links": "^6.3.6",
         "@storybook/builder-webpack5": "^6.3.7",
         "@storybook/manager-webpack5": "^6.3.7",
-        "@storybook/storybook-deployer": "^2.8.10",
         "@storybook/web-components": "^6.3.6",
         "@types/node": "^12.0.0",
         "extract-loader": "^5.1.0",
+        "gh-pages": "^3.2.3",
         "lit-analyzer": "^1.1.10",
         "lit-scss-loader": "^1.1.0",
         "prettier": "2.4.1",
-        "rollup": "^2.56.2",
         "sass": "^1.42.1",
         "sass-loader": "^12.1.0",
         "to-string-loader": "^1.1.6",
