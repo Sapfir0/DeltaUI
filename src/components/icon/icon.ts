@@ -2,6 +2,8 @@ import { css, html, LitElement, unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { IconNames } from '../../typings/iconNames';
 import style from './icon.module.scss';
+import webpackConfig from '../../../.storybook/main.js';
+
 export const IconName = 'delta-icon' as const;
 
 export interface IconProps {
@@ -17,7 +19,10 @@ export class Icon extends LitElement {
     name: IconNames = IconNames.Done;
 
     render() {
-        return html`<img src="/icons/${this.name}_black_24dp.svg" />`;
+        const publicPath = webpackConfig.publicPathCtor;
+        console.log(publicPath);
+
+        return html`<img src="${publicPath}/icons/${this.name}_black_24dp.svg" />`;
     }
 }
 
