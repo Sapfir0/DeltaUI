@@ -13,6 +13,7 @@
         "noFallthroughCasesInSwitch": true,
         "experimentalDecorators": true,
         "skipLibCheck": true,
+        "emitDeclarationOnly": false,
         "strict": true,
         "noImplicitAny": false,
         "outDir": "./build",
@@ -49,5 +50,5 @@
         ]
     },
     "include": ["src", "node_modules/lit-scss-loader/types.d.ts"],
-    "exclude": []
+    "exclude": ["src/stories"]
 }

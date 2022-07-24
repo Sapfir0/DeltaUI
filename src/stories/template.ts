@@ -1,6 +1,5 @@
 import { ComponentNames } from '../components/meta';
 
-// @ts-ignore
 export const TemplateComponent =
     (componentName: ComponentNames) =>
     <PropType extends {}>(args: PropType) => {
