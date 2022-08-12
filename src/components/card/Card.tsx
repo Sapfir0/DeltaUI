@@ -1,10 +1,10 @@
+import React from 'react';
 import styles from './Card.module.scss';
 
-export const CardName = 'delta-card' as const;
-
 export interface CardProps {
-    header?: string;
-    content?: string;
+    header: JSX.Element;
+    content: JSX.Element;
+    children: JSX.Element[] | JSX.Element | undefined
 }
 
 export function Card(props: CardProps) {

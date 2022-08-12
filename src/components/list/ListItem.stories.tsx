@@ -1,49 +1,46 @@
-import '../components/button/button';
-import { Meta, Story } from '@storybook/web-components';
-import { ListName, ListProps } from '../components/list/list';
-import { ListItemName } from '../components/listItem/listItem';
+import { ComponentStory } from "@storybook/react";
+import React from "react";
+import { List } from "../list/List";
+import { ListItem } from "../listItem/listItem";
+import { ListProps } from "./List";
 
 export default {
-    title: 'Example/List',
-    argTypes: {},
-} as Meta;
+  title: "Example/List",
+  argTypes: {},
+};
 
-const ListItemsTemplate = ['Overview', 'Devices', 'Analytics', 'Rules', 'Gallery', 'History', 'Settings'].map(
-    (name, i) => ({ id: i, text: name }),
-);
+const listItemsTemplate = [
+  "Overview",
+  "Devices",
+  "Analytics",
+  "Rules",
+  "Gallery",
+  "History",
+  "Settings",
+].map((name, i) => ({ id: i, text: name }));
 
 let selectedIndex = 0;
 const setSelectedIndex = (index: number) => () => {
-    selectedIndex = index;
-    console.log(selectedIndex);
+  selectedIndex = index;
+  console.log(selectedIndex);
 };
 
-const createList = (args) => {
-    const items: string[] = [];
-    for (const listItemTemplate of ListItemsTemplate) {
-        const onClick = setSelectedIndex(listItemTemplate.id);
-        items.push(
-            `<${ListItemName} 
-            selected="${listItemTemplate.id === selectedIndex}" 
-            @onClick="${onClick}" > 
-                ${listItemTemplate.text} 
-            </${ListItemName}>`,
-        );
-    }
-
-    const element = document.createElement(ListName);
-    element.innerHTML = items.toString().replaceAll(',', '');
-
-    for (const arg in args) {
-        element[arg as string] = args[arg];
-    }
-    return element;
+const createList = (args: ListProps) => {
+  return (
+    <List {...args}>
+      {listItemsTemplate.map((data) => (
+        <ListItem
+          selected={data.id === selectedIndex}
+          onClick={setSelectedIndex(data.id)}
+        >
+          {data.text}
+        </ListItem>
+      ))}
+    </List>
+  );
 };
 
-const Template: Story<ListProps> = createList;
+const Template: ComponentStory<typeof List> = createList;
 
-export const List = Template.bind({ text: 'Empty' });
-List.args = {
-    text: 'Save',
-    disabled: false,
-};
+export const Primary = Template.bind({});
+Primary.args = {};

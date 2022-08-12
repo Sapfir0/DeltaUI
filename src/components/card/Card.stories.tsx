@@ -1,21 +1,20 @@
-import { Meta, Story } from '@storybook/web-components';
-import { CardName, CardProps } from '../components/card/card';
+import { ComponentStory } from "@storybook/react";
+import React from "react";
+import { CardProps, Card } from "../Card/Card";
 
 export default {
-    title: 'Example/Card',
-    argTypes: {},
-} as Meta;
-
-const createCard = (args: CardProps) => {
-    const element = `<${CardName}> ${args.header} ${args.content}  </${CardName}>`;
-
-    return element;
+  title: "Example/Card",
+  argTypes: {},
 };
 
-const Template: Story<CardProps> = createCard;
+const createCard = (args: CardProps) => {
+  return <Card {...args}></Card>;
+};
 
-export const Card = Template.bind({});
-Card.args = {
-    header: `<div slot="header"> Header </div>`,
-    content: `<div slot="content"> Content </div>`,
+const Template: ComponentStory<typeof Card> = createCard;
+
+export const Primary = Template.bind({});
+Primary.args = {
+  header: <div slot="header"> Header </div>,
+  content: <div slot="content"> Content </div>,
 };
