@@ -1,16 +1,16 @@
-@import '../../styles/vars.scss';
+@import "../../styles/vars.scss";
 
-.card {
-    background-color: $content-bg-color;
-    padding-left: 10px;
-    padding-bottom: 10px;
+.root {
+  background-color: $content-bg-color;
+  padding-left: 10px;
+  padding-bottom: 10px;
 }
 
-.card__header {
-    padding-top: 10px;
-    color: $white-color;
+.header {
+  padding-top: 10px;
+  color: $white-color;
 }
 
-.card__content {
-    color: $grey-color;
+.content {
+  color: $grey-color;
 }
