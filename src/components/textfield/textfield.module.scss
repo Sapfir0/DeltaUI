@@ -1,12 +1,12 @@
-@import '../../styles/vars.scss';
-@import '../../styles/fonts.scss';
+@import "../../styles/vars.scss";
+@import "../../styles/fonts.scss";
 
-.textfield {
-    font-family: 'Roboto';
-    color: $grey-color;
-    background-color: $accent-color;
-    padding: 5px;
-    border: none;
+.root {
+  font-family: "Roboto";
+  color: $grey-color;
+  background-color: $accent-color;
+  padding: 5px;
+  border: none;
 }
 
 // .textfield:valid {
@@ -18,5 +18,5 @@
 // }
 
 .icon {
-    content: '\f007';
+  content: "\f007";
 }

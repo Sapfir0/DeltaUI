@@ -1,29 +1,32 @@
-@import '../../styles/vars.scss';
-@import '../../styles/fonts.scss';
+@import "../../styles/vars.scss";
+@import "../../styles/fonts.scss";
 
 $padding: 10px;
 
-.list-item {
-    border-left: 8px solid transparent;
-    padding-left: 20px;
-    padding-top: $padding;
-    padding-bottom: $padding;
-    font-family: 'Roboto';
+.root {
+  border-left: 8px solid transparent;
+  padding-left: 20px;
+
+  font-family: "Roboto";
 }
 
-.list-item:hover {
-    border-left-color: $primary-color;
-    background: linear-gradient(to right, $accent-color 10%, transparent 90%);
+.root:hover {
+  border-left-color: $primary-color;
+  background: linear-gradient(to right, $accent-color 10%, transparent 90%);
 }
 
-.list-item__button {
-    background-color: transparent;
-    border: none;
-    color: $grey-color;
+.button {
+  background-color: transparent;
+  border: none;
+  color: $grey-color;
+  text-align: left;
+  width: 100%;
+  padding-top: $padding;
+  padding-bottom: $padding;
 }
 
-.list-item__button .selected {
-    border-left-color: $primary-color;
-    background-color: $bg-color;
-    color: $primary-color;
+.button .selected {
+  border-left-color: $primary-color;
+  background-color: $bg-color;
+  color: $primary-color;
 }
