@@ -1,5 +1,5 @@
 import "../components/button/button";
-import { Icon } from "./Icon";
+import { Icon } from "./icon";
 import React from "react";
 import { ComponentStory } from "@storybook/react";
 import { getEnumValues } from "../../utils/enum";
