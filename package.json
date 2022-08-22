@@ -1,7 +1,8 @@
 {
-  "name": "my-app",
+  "name": "delta_ui",
   "version": "0.1.0",
-  "private": true,
+  "author": "Yurev Alexander",
+  "main": "",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
@@ -20,9 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "build": "tsc",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
   },
