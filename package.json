@@ -1,9 +1,9 @@
 {
   "name": "delta_kit",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "author": "Yurev Alexander",
-  "main": "dist/delta-ui.umd.js",
-  "description": "",
+  "main": "dist/index.js",
+  "description": "Simple UI-kit",
   "scripts": {
     "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "prebuild": "rimraf dist",
