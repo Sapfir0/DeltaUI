@@ -2,10 +2,10 @@ import styles from "./Button.module.scss";
 import React from "react";
 
 export interface ButtonProps {
-  text: string;
+  text?: string;
   disabled?: boolean;
-  fullSize: boolean;
-  onClick: () => void;
+  fullSize?: boolean;
+  onClick?: () => void;
 }
 
 export function Button(props: ButtonProps) {
