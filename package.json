@@ -1,10 +1,10 @@
 {
   "name": "delta_kit",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "author": "Yurev Alexander",
   "main": "dist/index.js",
   "module": "dist/delta-ui.es5.js",
-  "typings": "dist/types/delta-ui.d.ts",
+  "typings": "dist/index.d.ts",
   "description": "Simple UI-kit",
   "scripts": {
     "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
