@@ -1,13 +1,15 @@
 {
   "name": "delta_kit",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "author": "Yurev Alexander",
   "main": "dist/index.js",
+  "module": "dist/delta-ui.es5.js",
+  "typings": "dist/types/delta-ui.d.ts",
   "description": "Simple UI-kit",
   "scripts": {
     "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "prebuild": "rimraf dist",
-    "build": "tsc --module commonjs && rollup -c rollup.config.ts",
+    "build": "tsc",
     "start": "rollup -c rollup.config.ts -w",
     "test": "jest --coverage",
     "test:watch": "jest --coverage --watch",
@@ -22,10 +24,12 @@
     "build-storybook": "build-storybook -s public"
   },
   "dependencies": {
+    "@wessberg/rollup-plugin-ts": "^2.0.4",
     "classnames": "^2.3.1",
     "dart-sass": "^1.25.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rollup-plugin-scss": "^3.0.0",
     "sass": "^1.54.5"
   },
   "devDependencies": {
@@ -125,8 +129,6 @@
   "engines": {
     "node": ">=6.0.0"
   },
-  "module": "dist/delta-ui.es5.js",
-  "typings": "dist/types/delta-ui.d.ts",
   "files": [
     "dist"
   ],
