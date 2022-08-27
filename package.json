@@ -1,6 +1,6 @@
 {
   "name": "delta_kit",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "author": "Yurev Alexander",
   "main": "dist/index.js",
   "module": "dist/delta-ui.es5.js",
