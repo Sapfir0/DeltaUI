@@ -1,21 +1,21 @@
-import styles from "./Button.module.scss";
-import React from "react";
+import styles from './Button.module.scss'
+import React from 'react'
+import { IconNames } from '../../typings/iconNames'
+import { Icon } from '../icon'
 
 export interface ButtonProps {
-  text?: string;
-  disabled?: boolean;
-  fullSize?: boolean;
-  onClick?: () => void;
+	text?: string
+	disabled?: boolean
+	fullSize?: boolean
+	onClick?: () => void
+	icon?: JSX.Element
 }
 
-export function Button(props: ButtonProps) {
-  return (
-    <button
-      onClick={props.onClick}
-      disabled={props.disabled}
-      className={styles.root}
-    >
-      {props.text}
-    </button>
-  );
+export function Button({ disabled, onClick, icon, text }: ButtonProps) {
+	return (
+		<button onClick={onClick} disabled={disabled} className={styles.root}>
+			{icon}
+			{text}
+		</button>
+	)
 }

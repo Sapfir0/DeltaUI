@@ -1,46 +1,69 @@
-import { ComponentStory } from "@storybook/react";
-import React from "react";
-import { List } from "./List";
-import { ListItem } from "../listItem/ListItem";
-import { ListProps } from "./List";
+import { ComponentStory } from '@storybook/react'
+import React, { useState } from 'react'
+import { List } from './List'
+import { ListItem } from '../listItem/ListItem'
+import { ListProps } from './List'
 
 export default {
-  title: "Example/List",
+  title: 'Example/List',
+  component: List,
   argTypes: {},
-};
+}
 
 const listItemsTemplate = [
-  "Overview",
-  "Devices",
-  "Analytics",
-  "Rules",
-  "Gallery",
-  "History",
-  "Settings",
-].map((name, i) => ({ id: i, text: name }));
+  { name: 'Overview', link: '/' },
+  { name: 'Devices', link: '/devices' },
+  { name: 'Analytics', link: '/analytics' },
+  { name: 'Rules', link: '/rules' },
+  { name: 'Gallery', link: '/gallery' },
+  { name: 'History', link: '/history' },
+  { name: 'Settings', link: '/settings' },
+].map((route, i) => ({ id: i, text: route.name, link: route.link }))
 
-let selectedIndex = 0;
-const setSelectedIndex = (index: number) => () => {
-  selectedIndex = index;
-  console.log(selectedIndex);
-};
+function ListWrapper(args: ListProps) {
+  const [selectedIndex, setSelectedIndex] = useState(0)
+  const setSelectedElement = (index: number) => () => {
+    setSelectedIndex(index)
+    console.log(selectedIndex)
+  }
+  return (
+    <List {...args}>
+      {listItemsTemplate.map((data) => (
+        <ListItem selected={data.id === selectedIndex} onClick={setSelectedElement(data.id)}>
+          {data.text}
+        </ListItem>
+      ))}
+    </List>
+  )
+}
 
-const createList = (args: ListProps) => {
+function ListLinksWrapper(args: ListProps) {
+  const [selectedIndex, setSelectedIndex] = useState(0)
+  const setSelectedElement = (index: number) => () => {
+    setSelectedIndex(index)
+    console.log(selectedIndex)
+  }
   return (
     <List {...args}>
       {listItemsTemplate.map((data) => (
         <ListItem
           selected={data.id === selectedIndex}
-          onClick={setSelectedIndex(data.id)}
+          to={data.link}
+          onClick={setSelectedElement(data.id)}
         >
           {data.text}
         </ListItem>
       ))}
     </List>
-  );
-};
+  )
+}
 
-const Template: ComponentStory<typeof List> = createList;
+const TemplateButtonsList: ComponentStory<typeof List> = ListWrapper
 
-export const Primary = Template.bind({});
-Primary.args = {};
+export const WithButtons = TemplateButtonsList.bind({})
+WithButtons.args = {}
+
+const TemplateLinksList: ComponentStory<typeof List> = ListLinksWrapper
+
+export const WithLinks = TemplateLinksList.bind({})
+WithLinks.args = {}

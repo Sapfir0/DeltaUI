@@ -1,15 +1,13 @@
-import { IconNames } from "../../typings/iconNames";
-import React from "react";
+import { IconNames } from '../../typings/iconNames'
+import React from 'react'
 
-export const IconName = "delta-icon" as const;
+export const IconName = 'delta-icon' as const
 
 export interface IconProps {
-  name: IconNames;
-  alt: string;
+	name: IconNames[number]
+	alt: string
 }
 
-export function Icon(props: IconProps) {
-  const name: IconNames = props.name ?? IconNames.Done;
-
-  return <img src={`/icons/${name}_black_24dp.svg`} alt={props.alt} />;
+export function Icon({ name, alt }: IconProps) {
+	return <img src={`/icons/${name}_black_24dp.svg`} alt={alt} />
 }

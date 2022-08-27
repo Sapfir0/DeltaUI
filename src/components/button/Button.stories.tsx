@@ -1,17 +1,22 @@
-import { ComponentStory } from '@storybook/react';
-import React from 'react';
-import './Button';
-import { Button } from './Button';
+import { ComponentStory } from '@storybook/react'
+import React from 'react'
+import { IconNames } from '../../typings/iconNames'
+import { Icon } from '../icon'
+import './Button'
+import { Button } from './Button'
 
 export default {
-    title: 'Example/Button',
-    argTypes: {
-        onClick: { action: 'onClick' },
-        disabled: { type: 'boolean' },
-    },
-};
+	title: 'Example/Button',
+	argTypes: {
+		onClick: { action: 'onClick' },
+		disabled: { type: 'boolean' },
+	},
+}
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
 
-export const Primary = Template.bind({ text: 'Empty' });
-Primary.args = { text: 'Save', disabled: false };
+export const Primary = Template.bind({ text: 'Empty' })
+Primary.args = { text: 'Save', disabled: false }
+
+export const IconWithoutText = Template.bind({ text: 'Empty' })
+IconWithoutText.args = { icon: <Icon name={IconNames.Done} alt="лох" /> }
