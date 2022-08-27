@@ -10,11 +10,11 @@ export default {
   },
 };
 
-const Template: ComponentStory<typeof ProgressBar> = (args) => (
+const BaseView: ComponentStory<typeof ProgressBar> = (args) => (
   <ProgressBar {...args} />
 );
 
-export const Primary = Template.bind({});
+export const Primary = BaseView.bind({});
 Primary.args = {
   value: 76,
   max: 100,

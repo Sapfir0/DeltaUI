@@ -1,4 +1,3 @@
-import "../components/button/button";
 import { Icon } from "./icon";
 import React from "react";
 import { ComponentStory } from "@storybook/react";

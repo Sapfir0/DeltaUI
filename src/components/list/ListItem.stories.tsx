@@ -1,7 +1,7 @@
 import { ComponentStory } from "@storybook/react";
 import React from "react";
 import { List } from "./List";
-import { ListItem } from "../listItem/listItem";
+import { ListItem } from "../listItem/ListItem";
 import { ListProps } from "./List";
 
 export default {
