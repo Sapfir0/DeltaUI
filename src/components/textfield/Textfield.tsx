@@ -1,21 +1,23 @@
-import React from "react";
-import { EventHandler, useCallback, useState } from "react";
-import styles from "./Textfield.module.scss";
-import { InputType } from "./TextfieldUtils";
+import React from 'react'
+import { EventHandler, useCallback, useState } from 'react'
+import { IconNames } from '../../typings/iconNames'
+import { Icon } from '../icon'
+import styles from './Textfield.module.scss'
+import { InputType } from './TextfieldUtils'
 
 export interface TextfieldProps {
-  placeholder?: string;
-  pattern?: string;
-  type?: InputType;
-  defaultValue?: string;
+  placeholder?: string
+  pattern?: string
+  type?: InputType
+  defaultValue?: string
 }
 
 export function Textfield(props: TextfieldProps) {
-  const [value, setValue] = useState(props.defaultValue);
+  const [value, setValue] = useState(props.defaultValue)
 
   const onChange = useCallback((event: any) => {
-    setValue(event);
-  }, []);
+    setValue(event)
+  }, [])
   return (
     <div>
       <input
@@ -25,7 +27,7 @@ export function Textfield(props: TextfieldProps) {
         placeholder={props.placeholder}
         onChange={onChange}
       />
-      <span className="material-icons-outlined">done</span>
+      <Icon name={IconNames.Done} />
     </div>
-  );
+  )
 }

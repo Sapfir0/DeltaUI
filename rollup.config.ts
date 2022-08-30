@@ -23,7 +23,12 @@ const plugins = [
   commonjs({
     namedExports: {
       // https://github.com/rollup/rollup-plugin-commonjs#custom-named-exports
-      'node_modules/react/index.js': ['useState', 'useRef', 'useEffect', 'useCallback'],
+      'node_modules/react/index.js': [
+        'useState',
+        'useRef',
+        'useEffect',
+        'useCallback',
+      ],
     },
   }),
   // Allow node_modules resolution, so you can use 'external' to control
