@@ -1,24 +1,23 @@
 {
   "name": "delta_kit",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "author": "Yurev Alexander",
   "main": "dist/index.js",
   "module": "dist/delta-ui.es5.js",
   "typings": "dist/index.d.ts",
   "description": "Simple UI-kit",
   "scripts": {
-    "lint": "eslint",
     "prebuild": "rimraf dist",
     "build": "tsc && rollup -c rollup.config.ts --environment NODE_ENV:production && du -hs ./dist",
-    "start": "rollup -c rollup.config.ts -w",
     "test": "jest --coverage",
     "test:watch": "jest --coverage --watch",
     "test:prod": "npm run lint && npm run test -- --no-cache",
     "precommit": "lint-staged",
-    "storybook": "start-storybook -p 6006 -s public",
+    "start": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
   },
   "dependencies": {
+    "@babel/core": "^7.18.13",
     "classnames": "^2.3.1",
     "dart-sass": "^1.25.0",
     "react": "^18.2.0",
@@ -27,6 +26,7 @@
     "sass": "^1.54.5"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "7.16.3",
     "@commitlint/cli": "^7.1.2",
     "@commitlint/config-conventional": "^7.1.2",
     "@storybook/addon-actions": "^6.5.10",
@@ -43,7 +43,17 @@
     "@types/node": "^10.11.0",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.35.1",
+    "@typescript-eslint/parser": "^5.35.1",
     "cross-env": "^5.2.0",
+    "eslint": "^8.23.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-import": "2.25.3",
+    "eslint-plugin-jest": "26.1.1",
+    "eslint-plugin-jest-dom": "3.9.2",
+    "eslint-plugin-react": "7.27.1",
+    "eslint-plugin-react-hooks": "4.3.0",
+    "eslint-plugin-testing-library": "5.0.5",
     "husky": "^1.0.1",
     "jest": "^23.6.0",
     "jest-config": "^23.6.0",
@@ -74,33 +84,6 @@
       "path": "node_modules/cz-conventional-changelog"
     }
   },
-  "jest": {
-    "transform": {
-      ".(ts|tsx)": "ts-jest"
-    },
-    "testEnvironment": "node",
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
-    "coveragePathIgnorePatterns": [
-      "/node_modules/",
-      "/test/"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 90,
-        "functions": 95,
-        "lines": 95,
-        "statements": 95
-      }
-    },
-    "collectCoverageFrom": [
-      "src/*.{js,ts}"
-    ]
-  },
   "keywords": [],
   "repository": {
     "type": "git",
@@ -108,7 +91,7 @@
   },
   "license": "MIT",
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=14.0.0"
   },
   "files": [
     "dist"
