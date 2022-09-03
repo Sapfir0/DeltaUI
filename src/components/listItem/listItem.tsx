@@ -1,7 +1,7 @@
 import styles from './ListItem.module.scss'
 import classNames from 'classnames'
 import React from 'react'
-import { IconNames } from '../../typings/iconNames'
+import { IconName } from '../../typings/iconNames'
 import { Icon } from '../icon'
 
 export interface ListItemProps {
@@ -10,7 +10,7 @@ export interface ListItemProps {
   key?: string | number
   children: JSX.Element | string
   to?: string
-  icon?: IconNames
+  icon?: IconName
 }
 
 export function ListItem({
@@ -25,7 +25,7 @@ export function ListItem({
     className: classNames(styles.button, {
       [styles.selected]: selected,
     }),
-    onClick,
+    onClick
   }
   const ListItemComponent = to ? (
     <a href={to} {...componentProps}>

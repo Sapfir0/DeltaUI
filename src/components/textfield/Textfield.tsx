@@ -27,7 +27,7 @@ export function Textfield(props: TextfieldProps) {
         placeholder={props.placeholder}
         onChange={onChange}
       />
-      <Icon name={IconNames.Done} />
+      <Icon name={'done'} />
     </div>
   )
 }

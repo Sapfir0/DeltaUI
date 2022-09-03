@@ -2,20 +2,48 @@ import { Icon } from './icon'
 import React from 'react'
 import { ComponentStory } from '@storybook/react'
 import { getEnumValues } from '../../utils/enum'
-import { IconNames } from '../../typings/iconNames'
+import { IconName } from '../../typings/iconNames'
 
-const iconsList = getEnumValues(IconNames)
+const iconNames: IconName[] =  [
+	'arrow_back',
+	'arrow_downward',
+	'arrow_forward',
+	'arrow_upward',
+	'cancel',
+	'chart-line',
+	'cellphone-link',
+	'done',
+	'equalizer',
+	'email',
+	'event',
+	'help',
+	'home',
+	'highlight_off',
+	'lightbulb',
+	'list-bulleted',
+	'lock',
+	'server',
+	'settings',
+	'notifications',
+	'notifications_none',
+	'power',
+	'print',
+	'update',
+	'visibility',
+	'wifi'
+  ]
+
 
 export default {
 	title: 'Example/Icon',
 	argTypes: {
-		name: { options: iconsList, control: { type: 'select' } },
+		name: { options: iconNames, control: { type: 'select' } },
 	},
 }
 
 const Template: ComponentStory<typeof Icon> = (args) => (
 	<>
-		{iconsList.map((icon) => (
+		{iconNames.map((icon) => (
 			<Icon {...args} name={icon} />
 		))}
 	</>
@@ -23,5 +51,5 @@ const Template: ComponentStory<typeof Icon> = (args) => (
 
 export const Primary = Template.bind({ name: 'Empty' })
 Primary.args = {
-	name: IconNames.Done,
+	name: 'done',
 }

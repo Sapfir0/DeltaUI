@@ -7,6 +7,7 @@
   "typings": "dist/index.d.ts",
   "description": "Simple UI-kit",
   "scripts": {
+    "lint": "eslint .",
     "prebuild": "rimraf dist",
     "build": "tsc && rollup -c rollup.config.ts --environment NODE_ENV:production && du -hs ./dist",
     "test": "jest --coverage",
@@ -18,6 +19,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.18.13",
+    "@babel/preset-react": "^7.18.6",
     "classnames": "^2.3.1",
     "dart-sass": "^1.25.0",
     "react": "^18.2.0",
