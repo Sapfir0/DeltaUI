@@ -1,12 +1,12 @@
 @import '../../styles/vars.scss';
 
 .root {
-    background-color: $primary-color;
-    padding: 10px 40px;
+    padding: 3px 2px 0px 2px;
     font-size: medium;
     color: $white-color;
     border-radius: 5px;
     border: none;
+    background-color: transparent;
 }
 
 .root:hover {

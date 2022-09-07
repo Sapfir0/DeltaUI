@@ -52,4 +52,5 @@ const Template: ComponentStory<typeof Icon> = (args) => (
 export const Primary = Template.bind({ name: 'Empty' })
 Primary.args = {
 	name: 'done',
+	isStorybook: true,
 }

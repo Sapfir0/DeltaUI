@@ -5,6 +5,7 @@ import typescript from 'rollup-plugin-typescript2'
 import json from 'rollup-plugin-json'
 import postcss from 'rollup-plugin-postcss'
 import { terser } from 'rollup-plugin-terser'
+import copy from 'rollup-plugin-copy'
 
 const isProduction = process.env.NODE_ENV === 'production'
 
@@ -18,6 +19,11 @@ const plugins = [
     tsconfig: 'tsconfig.json',
     tsconfigOverride: { compilerOptions: { emitDeclarationOnly: false } },
     objectHashIgnoreUnknownHack: true,
+  }),
+  copy({
+    targets: [
+      { src: 'public/icons', dest: 'dist' },
+    ]
   }),
   // Allow bundling cjs modules (unlike webpack, rollup doesn't understand cjs)
   commonjs({

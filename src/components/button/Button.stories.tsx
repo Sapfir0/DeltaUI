@@ -16,7 +16,8 @@ export default {
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
 
 export const Primary = Template.bind({ text: 'Empty' })
-Primary.args = { text: 'Save', disabled: false }
+Primary.args = { text: 'Save', disabled: false, }
 
 export const IconWithoutText = Template.bind({ text: 'Empty' })
-IconWithoutText.args = { icon: <Icon name={IconNames.Done} alt="лох" /> }
+IconWithoutText.args = { icon: <Icon name='email' isStorybook={true} />, 	
+}

@@ -1,6 +1,6 @@
 import styles from './Button.module.scss'
 import React from 'react'
-import { IconNames } from '../../typings/iconNames'
+import { IconName } from '../../typings/iconNames'
 import { Icon } from '../icon'
 
 export interface ButtonProps {
@@ -8,7 +8,7 @@ export interface ButtonProps {
   disabled?: boolean
   fullSize?: boolean
   onClick?: () => void
-  icon?: IconNames | JSX.Element
+  icon?: IconName | JSX.Element
 }
 
 export function Button({ disabled, onClick, icon, text }: ButtonProps) {
