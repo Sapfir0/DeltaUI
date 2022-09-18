@@ -7,5 +7,5 @@ export interface ProgressBarProps {
 }
 
 export function ProgressBar(props: ProgressBarProps) {
-  return <progress max={props.max} value={props.value}></progress>;
+  return <progress max={props.max ?? 100} value={props.value}></progress>;
 }

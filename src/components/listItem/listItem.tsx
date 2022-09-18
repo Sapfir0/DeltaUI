@@ -2,7 +2,7 @@ import styles from './ListItem.module.scss'
 import classNames from 'classnames'
 import React from 'react'
 import { IconName } from '../../typings/iconNames'
-import { Icon } from '../icon'
+import { Icon, IconProps } from '../icon'
 
 export interface ListItemProps {
   onClick?: () => void
@@ -11,6 +11,7 @@ export interface ListItemProps {
   children: JSX.Element | string
   to?: string
   icon?: IconName
+  iconProps?: IconProps
 }
 
 export function ListItem({
@@ -20,6 +21,7 @@ export function ListItem({
   key,
   children,
   to,
+  iconProps,
 }: ListItemProps) {
   const componentProps = {
     className: classNames(styles.button, {
@@ -37,7 +39,7 @@ export function ListItem({
 
   return (
     <div className={styles.root}>
-      {icon && <Icon name={icon} alt={icon} />}
+      {icon && <Icon name={icon} alt={icon} {...iconProps} />}
       {ListItemComponent}
     </div>
   )

@@ -7,6 +7,7 @@ export interface IconProps {
   name: IconNames[number]
   alt?: string
   isStorybook?: boolean // параметр, чтобы подменять путь до картинки, если отталкиваться от NODE_ENV, то будет использоваться такая переменная из используещего проекта 
+  className?: string
 }
 
 export function Icon({ name, alt, isStorybook }: IconProps) {

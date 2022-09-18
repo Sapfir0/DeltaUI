@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { List } from './List'
 import { ListItem } from '../listItem/ListItem'
 import { ListProps } from './List'
-import { IconNames } from '../../typings/iconNames'
+import { IconName, IconNames } from '../../typings/iconNames'
 
 export default {
   title: 'Example/List',
@@ -11,14 +11,14 @@ export default {
   argTypes: {},
 }
 
-const listItemsTemplate = [
-  { name: 'Overview', link: '/', icon: IconNames.Home },
-  { name: 'Devices', link: '/devices', icon: IconNames.Devices },
-  { name: 'Analytics', link: '/analytics', icon: IconNames.ChartLine },
-  { name: 'Rules', link: '/rules', icon: IconNames.ListBulleted },
-  { name: 'Gallery', link: '/gallery', icon: IconNames.Devices },
-  { name: 'History', link: '/history', icon: IconNames.Update },
-  { name: 'Settings', link: '/settings', icon: IconNames.Settings },
+const listItemsTemplate: {text: string, link: string, icon: IconName, id: number}[] = [
+  { name: 'Overview', link: '/', icon: 'home' },
+  { name: 'Devices', link: '/devices', icon: 'settings' },
+  { name: 'Analytics', link: '/analytics', icon: 'chart-line' },
+  { name: 'Rules', link: '/rules', icon: 'list-bulleted' },
+  { name: 'Gallery', link: '/gallery', icon: 'lightbulb' },
+  { name: 'History', link: '/history', icon: 'lightbulb' },
+  { name: 'Settings', link: '/settings', icon: 'settings' },
 ].map(({ name, icon, link }, i) => ({
   id: i,
   text: name,
@@ -38,6 +38,7 @@ function ListWrapper(args: ListProps) {
           selected={data.id === selectedIndex}
           onClick={setSelectedElement(data.id)}
           icon={data.icon}
+          iconProps={{isStorybook: true}}
         >
           {data.text}
         </ListItem>
@@ -60,6 +61,7 @@ function ListLinksWrapper(args: ListProps) {
           to={data.link}
           onClick={setSelectedElement(data.id)}
           icon={data.icon}
+          iconProps={{isStorybook: true}}
         >
           {data.text}
         </ListItem>
