@@ -2,7 +2,6 @@ import { ComponentStory } from '@storybook/react'
 import React from 'react'
 import { IconNames } from '../../typings/iconNames'
 import { Icon } from '../icon'
-import './Button'
 import { Button } from './Button'
 
 export default {

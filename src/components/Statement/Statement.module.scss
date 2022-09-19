@@ -1,0 +1,37 @@
+@import '../../styles/vars.scss';
+
+.root {
+    display: flex;
+    flex-direction: column;
+    font-family: $default-font;
+}
+
+.title {
+    color: $grey-color;
+    font-weight: 600;
+
+}
+
+.value {
+    color: $white-color;
+}
+
+.dimension {
+    color: $grey-color;
+}
+
+.large {
+    font-size: 50px;
+}
+
+.help {
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.mainBlock {
+    display: flex;
+    flex-direction: row;
+}

@@ -1,0 +1,8 @@
+@import '../../styles/vars.scss';
+
+.root {
+    display: flex;
+    flex-direction: column;
+    font-family: $default-font;
+}
+
