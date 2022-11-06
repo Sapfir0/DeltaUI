@@ -7,18 +7,18 @@ import { Icon, IconProps } from '../icon'
 export interface ListItemProps {
   onClick?: () => void
   selected?: boolean
-  key?: string | number
   children: JSX.Element | string
   to?: string
   icon?: IconName
   iconProps?: IconProps
+  className?: string
 }
 
 export function ListItem({
   icon,
   onClick,
   selected,
-  key,
+  className,
   children,
   to,
   iconProps,
@@ -38,7 +38,9 @@ export function ListItem({
   )
 
   return (
-    <div className={styles.root}>
+    <div className={classNames(styles.root, className, {
+      [styles.selected]: selected,
+    }, )}>
       {icon && <Icon name={icon} alt={icon} {...iconProps} />}
       {ListItemComponent}
     </div>

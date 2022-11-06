@@ -11,6 +11,7 @@ $padding: 10px;
   border-left-color: $primary-color;
   background: linear-gradient(to right, $accent-color 10%, transparent 90%);
 }
+
 .button {
   background-color: transparent;
   border: none;
@@ -23,8 +24,11 @@ $padding: 10px;
   padding-left: 10px;
   font-family: 'Roboto';
 }
+
 .selected {
   border-left-color: $primary-color;
   color: $primary-color;
   font-weight: bold;
+  background: linear-gradient(to right, $accent-color 10%, transparent 90%);
+
 }
