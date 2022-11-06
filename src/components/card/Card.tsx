@@ -3,14 +3,14 @@ import styles from './Card.module.scss'
 
 export interface CardProps {
   header: JSX.Element
-  content: JSX.Element
+  children: JSX.Element | JSX.Element
 }
 
-export function Card(props: CardProps) {
+export function Card({header, children}: CardProps) {
   return (
     <div className={styles.root}>
-      <h2 className={styles.header}>{props.header}</h2>
-      <div className={styles.content}>{props.content}</div>
+      <h2 className={styles.header}>{header}</h2>
+      <div className={styles.content}>{children}</div>
     </div>
   )
 }

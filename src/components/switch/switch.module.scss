@@ -1,15 +1,15 @@
 @import "../../styles/vars.scss";
 
-$component-width: 60px;
-$component-height: 34px;
-$pointer-diameter: 26px;
+:root {
+  --component-width: 60px;
+  --component-height: 34px;
+}
 
-/* The switch - the box around the slider */
 .root {
   position: relative;
   display: inline-block;
-  width: $component-width;
-  height: $component-height;
+  width: var(--component-width);
+  height: var(--component-height);
 }
 
 /* Hide default HTML checkbox */
@@ -33,12 +33,14 @@ $pointer-diameter: 26px;
 }
 
 .slider:before {
+  --pointer-padding: 4px;
+  --diameter: calc(var(--component-height) - var(--pointer-padding) * 2);
   position: absolute;
   content: "";
-  height: $pointer-diameter;
-  width: $pointer-diameter;
-  left: 4px;
-  bottom: 4px;
+  height: var(--diameter);
+  width: var(--diameter);
+  left: var(--pointer-padding);
+  bottom: var(--pointer-padding);
   background-color: white;
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -49,12 +51,12 @@ input:checked + .slider {
 }
 
 input:checked + .slider:before {
-  transform: translateX($component-width - $component-height);
+  transform: translateX(calc(var(--component-width) -  var(--component-height)) );
 }
 
 /* Rounded sliders */
 .round {
-  border-radius: $component-height;
+  border-radius: var(--component-height);
 }
 
 .round:before {
