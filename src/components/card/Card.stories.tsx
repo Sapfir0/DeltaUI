@@ -1,6 +1,6 @@
 import { ComponentStory } from "@storybook/react";
 import React from "react";
-import { CardProps, Card } from "../card/Card";
+import { ICardProps, Card } from "../card/Card";
 import { Statement } from "../statement";
 
 export default {
@@ -8,7 +8,7 @@ export default {
   argTypes: {},
 };
 
-const createCard = (args: CardProps) => {
+const createCard = (args: ICardProps) => {
   return <Card {...args}></Card>;
 };
 

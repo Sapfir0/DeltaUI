@@ -1,19 +1,19 @@
-import styles from './ToggleCard.module.scss'
 import React from 'react'
-import { Icon } from '../icon'
 import classNames from 'classnames'
+
 import { Switch } from '../switch'
 
+import styles from './ToggleCard.module.scss'
 
-export interface ToggleCardProps {
+export interface IToggleCardProps{
   value: string | number
   className?: string
 }
 
-export function ToggleCard({ value, className }: ToggleCardProps) {
+export function ToggleCard({ value, className }: IToggleCardProps) {
   return (
     <div className={classNames(styles.root, className)}>
       <Switch className={styles.switch} />
-</div>
+    </div>
   )
 }

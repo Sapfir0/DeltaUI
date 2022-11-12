@@ -1,0 +1,142 @@
+{
+	"extends": [
+		"@sapfir0/eslint-config",
+		"@sapfir0/eslint-config/react",
+		"@sapfir0/eslint-config/typescript",
+		"@sapfir0/eslint-config/typescript-requiring-type-checking",
+		"@sapfir0/eslint-config/jest",
+		"@sapfir0/eslint-config/storybook"
+	],
+	"env": {
+		"node": true,
+		"browser": true,
+		"commonjs": true
+	},
+	"globals": {
+		"showAlert": true,
+		"scrollMonitor": true
+	},
+	"parserOptions": {
+		"tsconfigRootDir": "./",
+		"project": [
+			"./tsconfig.json"
+		]
+	},
+	"parser": "@typescript-eslint/parser",
+	"plugins": [
+		"@typescript-eslint"
+	],
+	"settings": {
+		"import/ignore": [
+			"node_modules"
+		]
+	},
+	"rules": {
+		"@typescript-eslint/no-unsafe-argument": "off",
+		"no-unsafe-optional-chaining": 2,
+		"@typescript-eslint/consistent-type-imports": [
+			"error",
+			{
+				"prefer": "type-imports",
+				"disallowTypeAnnotations": false
+			}
+		],
+		"no-duplicate-imports": "off",
+		"no-restricted-imports": [
+			"error",
+			{
+				"paths": [
+					".",
+					".."
+				]
+			}
+		],
+		"import/dynamic-import-chunkname": "off",
+		"@typescript-eslint/unbound-method": [
+			"off",
+			{
+				"ignoreStatic": true
+			}
+		]
+	},
+	"overrides": [
+		{
+			"files": [
+				"babel.config.js",
+				"postcss.config.js",
+				"jest.config.js",
+				".jest/**/*.js",
+				".storybook/webpack.config.js",
+				".storybook/main.js"
+			],
+			"extends": "@sapfir0/eslint-config/commonjs",
+			"env": {
+				"node": true
+			},
+			"settings": {
+				"import/resolver": false
+			}
+		},
+		{
+			"files": [
+				".storybook/webpack.config.js"
+			],
+			"rules": {
+				"indent": [
+					"error",
+					2,
+					{
+						"MemberExpression": "off",
+						"SwitchCase": 1
+					}
+				]
+			}
+		},
+		{
+			"files": [
+				"*.ts",
+				"*.tsx"
+			],
+			"extends": [
+				"plugin:@typescript-eslint/recommended",
+				"plugin:@typescript-eslint/recommended-requiring-type-checking"
+			],
+			"rules": {
+				"@typescript-eslint/unbound-method": [
+					"off",
+					{
+						"ignoreStatic": true
+					}
+				]
+			},
+			"parserOptions": {
+				"project": [
+					"./tsconfig.json"
+				]
+			}
+		}
+	],
+	"ignorePatterns": [
+		"**/*.jest",
+		"**/eslint/**",
+		"**/*.spec.*",
+		"**/*.stories.*",
+		"**/*.mock.*",
+		"**/*.storybook",
+		"**/*.story.*",
+		"**/*.tests.*",
+		"**/dist/**",
+		"**/build/**",
+		"public/*",
+		"node_modules",
+		"babel.config.js",
+		"postcss.config.js",
+		"jest.config.js",
+		".jest/**/*.js",
+		".storybook/webpack.config.js",
+		".storybook/main.js",
+		"rollup.config.ts",
+		"typings.d.ts",
+		"config/webpack/**/*.js"
+	]
+}

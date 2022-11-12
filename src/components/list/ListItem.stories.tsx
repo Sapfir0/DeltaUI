@@ -2,7 +2,7 @@ import { ComponentStory } from '@storybook/react'
 import React, { useState } from 'react'
 import { List } from './List'
 import { ListItem } from '../listItem/ListItem'
-import { ListProps } from './List'
+import { IListProps} from './List'
 import { IconName, IconNames } from '../../typings/iconNames'
 
 export default {
@@ -26,7 +26,7 @@ const listItemsTemplate: {text: string, link: string, icon: IconName, id: number
   link,
 }))
 
-function ListWrapper(args: ListProps) {
+function ListWrapper(args: IListProps) {
   const [selectedIndex, setSelectedIndex] = useState(0)
   const setSelectedElement = (index: number) => () => {
     setSelectedIndex(index)
@@ -47,7 +47,7 @@ function ListWrapper(args: ListProps) {
   )
 }
 
-function ListLinksWrapper(args: ListProps) {
+function ListLinksWrapper(args: IListProps) {
   const [selectedIndex, setSelectedIndex] = useState(0)
   const setSelectedElement = (index: number) => () => {
     setSelectedIndex(index)

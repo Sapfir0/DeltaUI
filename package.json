@@ -1,5 +1,5 @@
 {
-  "name": "delta_kit",
+  "name": "@sapfir0/delta_kit",
   "version": "0.1.28",
   "author": "Yurev Alexander",
   "main": "dist/index.js",
@@ -29,6 +29,7 @@
     "sass": "^1.54.5"
   },
   "devDependencies": {
+    "@sapfir0/eslint-config": "^0.0.2",
     "@babel/eslint-parser": "7.16.3",
     "@commitlint/cli": "^7.1.2",
     "@commitlint/config-conventional": "^7.1.2",

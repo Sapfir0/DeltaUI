@@ -1,10 +1,11 @@
-import styles from './Statement.module.scss'
 import React from 'react'
-import { Icon } from '../icon'
 import classNames from 'classnames'
 
+import { Icon } from '../icon'
 
-export interface StatementProps {
+import styles from './Statement.module.scss'
+
+export interface IStatementProps{
   value: string | number
   className?: string
   dimension: string
@@ -12,14 +13,24 @@ export interface StatementProps {
   size: 'large' | 'medium'
 }
 
-export function Statement({ value, title, dimension, size, className }: StatementProps) {
+export function Statement({ value, title, dimension, size, className }: IStatementProps) {
   return (
     <div className={classNames(styles.root, className)}>
-      <span className={styles.title}>{title}</span>
+      <span className={styles.title}>
+        {title}
+      </span>
       <div className={styles.mainBlock}>
-        <span className={classNames(styles.value, {[styles.large]: size === 'large'})}>{value}</span>
+        <span
+          className={classNames(styles.value, {
+            [styles.large]: size === 'large',
+          })}
+        >
+          {value}
+        </span>
         <div className={styles.help}>
-          <span className={styles.dimension}>{dimension}</span>
+          <span className={styles.dimension}>
+            {dimension}
+          </span>
           <Icon name='arrow_upward' />
         </div>
       </div>

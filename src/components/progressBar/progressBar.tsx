@@ -1,11 +1,16 @@
-import React from "react";
+import React from 'react'
 
-export interface ProgressBarProps {
-  value?: number;
-  defaultValue?: number;
-  max?: number;
+export interface IProgressBarProps{
+  value?: number
+  defaultValue?: number
+  max?: number
 }
 
-export function ProgressBar(props: ProgressBarProps) {
-  return <progress max={props.max ?? 100} value={props.value}></progress>;
+export function ProgressBar(props: IProgressBarProps) {
+  return (
+    <progress
+      max={props.max ?? 100}
+      value={props.value}
+    />
+  )
 }

@@ -1,21 +1,24 @@
 import React, { useCallback, useState } from 'react'
-import { Icon } from '../icon'
-import styles from './Textfield.module.scss'
-import { InputType } from './TextfieldUtils'
 
-export interface TextfieldProps {
+import { Icon } from '../icon/icon'
+
+import styles from './Textfield.module.scss'
+import type { InputType } from './TextfieldUtils'
+
+export interface ITextfieldProps {
   placeholder?: string
   pattern?: string
   type?: InputType
   defaultValue?: string
 }
 
-export function Textfield(props: TextfieldProps) {
+export function Textfield(props: ITextfieldProps) {
   const [value, setValue] = useState(props.defaultValue)
 
-  const onChange = useCallback((event: any) => {
-    setValue(event)
+  const onChange = useCallback((event: React.FormEvent<HTMLInputElement>) => {
+    setValue(event.currentTarget.value)
   }, [])
+
   return (
     <div>
       <input
@@ -25,7 +28,7 @@ export function Textfield(props: TextfieldProps) {
         placeholder={props.placeholder}
         onChange={onChange}
       />
-      <Icon name={'done'} />
+      <Icon name='done' />
     </div>
   )
 }

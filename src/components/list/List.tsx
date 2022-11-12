@@ -1,10 +1,14 @@
-import React from "react";
+import React from 'react'
 
-export interface ListProps {
+export interface IListProps {
   children: JSX.Element[]
   className?: string
 }
 
-export function List({children, className}: ListProps) {
-  return <div className={className}>{children}</div>;
+export function List({ children, className }: IListProps) {
+  return (
+    <div className={className}>
+      {children}
+    </div>
+  )
 }

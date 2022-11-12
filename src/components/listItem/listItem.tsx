@@ -1,16 +1,19 @@
 import classNames from 'classnames'
 import React from 'react'
-import { IconName } from '../../typings/iconNames'
-import { Icon, IconProps } from '../icon'
+
+import type { IconName } from '../../typings/iconNames'
+import type { IIconProps } from '../icon'
+import { Icon } from '../icon'
+
 import styles from './ListItem.module.scss'
 
-export interface ListItemProps {
-  onClick?: () => void
+export interface IListItemProps {
+  onClick?(): void
   selected?: boolean
   children: JSX.Element | string
   to?: string
   icon?: IconName
-  iconProps?: IconProps
+  iconProps?: IIconProps
   className?: string
 }
 
@@ -22,26 +25,40 @@ export function ListItem({
   children,
   to,
   iconProps,
-}: ListItemProps) {
+}: IListItemProps) {
   const componentProps = {
     className: classNames(styles.button, {
       [styles.selected]: selected,
     }),
-    onClick
+    onClick,
   }
+
   const ListItemComponent = to ? (
-    <a href={to} {...componentProps}>
+    <a
+      href={to}
+      {...componentProps}
+    >
       {children}
     </a>
   ) : (
-    <button {...componentProps}>{children}</button>
+    <button {...componentProps}>
+      {children}
+    </button>
   )
 
   return (
-    <div className={classNames(styles.root, className, {
-      [styles.selected]: selected,
-    }, )}>
-      {icon && <Icon name={icon} alt={icon} {...iconProps} />}
+    <div
+      className={classNames(styles.root, className, {
+        [styles.selected]: selected,
+      },)}
+    >
+      {icon && (
+        <Icon
+          name={icon}
+          alt={icon}
+          {...iconProps}
+        />
+      )}
       {ListItemComponent}
     </div>
   )

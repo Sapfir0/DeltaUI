@@ -1,19 +1,28 @@
-import classNames from "classnames";
-import React, { HTMLAttributes } from "react";
-import { CombinePropsAndAttributes } from "../../utils/types";
-import styles from "./Switch.module.scss";
+import classNames from 'classnames'
+import type { HTMLAttributes } from 'react'
+import React from 'react'
 
-export interface SwitchSelfProps {
-  disabled?: boolean;
+import type { CombinePropsAndAttributes } from '../../utils/types'
+
+import styles from './Switch.module.scss'
+
+export interface ISwitchSelfProps{
+  disabled?: boolean
 }
 
-export type SwitchProps = CombinePropsAndAttributes<SwitchSelfProps, HTMLAttributes<HTMLLabelElement>>
+export type ISwitchProps = CombinePropsAndAttributes<ISwitchSelfProps, HTMLAttributes<HTMLLabelElement>>
 
-export function Switch(props: SwitchProps) {
+export function Switch(props: ISwitchProps) {
   return (
-    <label className={styles.root} {...props}>
-      <input disabled={props.disabled} type="checkbox" />
-      <span className={classNames(styles.round, styles.slider)}></span>
+    <label
+      className={styles.root}
+      {...props}
+    >
+      <input
+        disabled={props.disabled}
+        type='checkbox'
+      />
+      <span className={classNames(styles.round, styles.slider)} />
     </label>
-  );
+  )
 }
