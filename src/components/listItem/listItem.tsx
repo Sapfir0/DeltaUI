@@ -1,8 +1,8 @@
-import styles from './ListItem.module.scss'
 import classNames from 'classnames'
 import React from 'react'
 import { IconName } from '../../typings/iconNames'
 import { Icon, IconProps } from '../icon'
+import styles from './ListItem.module.scss'
 
 export interface ListItemProps {
   onClick?: () => void

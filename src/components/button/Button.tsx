@@ -1,9 +1,9 @@
-import styles from './Button.module.scss'
+import classNames from 'classnames'
 import React, { HTMLAttributes } from 'react'
 import { IconName } from '../../typings/iconNames'
-import { Icon } from '../icon'
-import classNames from 'classnames'
 import { CombinePropsAndAttributes } from '../../utils/types'
+import { Icon } from '../icon'
+import styles from './Button.module.scss'
 
 export interface ButtonSelfProps {
   text?: string

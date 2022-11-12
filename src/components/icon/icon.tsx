@@ -1,5 +1,5 @@
-import { IconNames } from '../../typings/iconNames'
 import React from 'react'
+import { IconNames } from '../../typings/iconNames'
 
 export const IconName = 'delta-icon' as const
 

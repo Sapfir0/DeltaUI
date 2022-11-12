@@ -1,6 +1,4 @@
-import React from 'react'
-import { EventHandler, useCallback, useState } from 'react'
-import { IconNames } from '../../typings/iconNames'
+import React, { useCallback, useState } from 'react'
 import { Icon } from '../icon'
 import styles from './Textfield.module.scss'
 import { InputType } from './TextfieldUtils'
