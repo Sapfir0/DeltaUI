@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 
-import { Icon } from '../icon'
+import { Icon } from '../Icon'
 
 import styles from './Statement.module.scss'
 

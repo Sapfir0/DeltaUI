@@ -4,7 +4,7 @@ import React from 'react'
 
 import type { IconName } from '../../typings/iconNames'
 import type { CombinePropsAndAttributes } from '../../utils/types'
-import { Icon } from '../icon'
+import { Icon } from '../Icon'
 
 import styles from './Button.module.scss'
 

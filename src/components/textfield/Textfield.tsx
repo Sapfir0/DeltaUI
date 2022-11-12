@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react'
 
-import { Icon } from '../icon/icon'
+import { Icon } from '../Icon/icon'
 
 import styles from './Textfield.module.scss'
 import type { InputType } from './TextfieldUtils'

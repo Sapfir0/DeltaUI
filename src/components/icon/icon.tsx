@@ -12,7 +12,7 @@ export interface IIconProps {
 }
 
 export function Icon({ name, alt, isStorybook }: IIconProps) {
-  const path = !isStorybook ? `/node_modules/delta_kit/dist/icons/${name}_black_24dp.svg` : `/icons/${name}_black_24dp.svg`
+  const path = !isStorybook ? `/node_modules/@sapfir0/delta_kit/dist/icons/${name}_black_24dp.svg` : `/icons/${name}_black_24dp.svg`
 
   return <img src={path} />
 }

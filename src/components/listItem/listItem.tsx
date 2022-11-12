@@ -2,8 +2,8 @@ import classNames from 'classnames'
 import React from 'react'
 
 import type { IconName } from '../../typings/iconNames'
-import type { IIconProps } from '../icon'
-import { Icon } from '../icon'
+import type { IIconProps } from '../Icon'
+import { Icon } from '../Icon'
 
 import styles from './ListItem.module.scss'
 

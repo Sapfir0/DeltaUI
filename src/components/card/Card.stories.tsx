@@ -1,6 +1,6 @@
 import { ComponentStory } from "@storybook/react";
 import React from "react";
-import { ICardProps, Card } from "../card/Card";
+import { ICardProps, Card } from "./Card";
 import { Statement } from "../statement";
 
 export default {

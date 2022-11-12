@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 
-import { Switch } from '../switch'
+import { Switch } from '../Switch'
 
 import styles from './ToggleCard.module.scss'
 
