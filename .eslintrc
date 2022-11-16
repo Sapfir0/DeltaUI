@@ -32,8 +32,6 @@
 		]
 	},
 	"rules": {
-		"@typescript-eslint/no-unsafe-argument": "off",
-		"no-unsafe-optional-chaining": 2,
 		"@typescript-eslint/consistent-type-imports": [
 			"error",
 			{
@@ -41,23 +39,7 @@
 				"disallowTypeAnnotations": false
 			}
 		],
-		"no-duplicate-imports": "off",
-		"no-restricted-imports": [
-			"error",
-			{
-				"paths": [
-					".",
-					".."
-				]
-			}
-		],
-		"import/dynamic-import-chunkname": "off",
-		"@typescript-eslint/unbound-method": [
-			"off",
-			{
-				"ignoreStatic": true
-			}
-		]
+		"no-duplicate-imports": "off"
 	},
 	"overrides": [
 		{
@@ -75,21 +57,6 @@
 			},
 			"settings": {
 				"import/resolver": false
-			}
-		},
-		{
-			"files": [
-				".storybook/webpack.config.js"
-			],
-			"rules": {
-				"indent": [
-					"error",
-					2,
-					{
-						"MemberExpression": "off",
-						"SwitchCase": 1
-					}
-				]
 			}
 		},
 		{
@@ -117,13 +84,7 @@
 		}
 	],
 	"ignorePatterns": [
-		"**/*.jest",
-		"**/eslint/**",
-		"**/*.spec.*",
 		"**/*.stories.*",
-		"**/*.mock.*",
-		"**/*.storybook",
-		"**/*.story.*",
 		"**/*.tests.*",
 		"**/dist/**",
 		"**/build/**",
