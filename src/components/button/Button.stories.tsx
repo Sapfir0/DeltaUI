@@ -1,6 +1,6 @@
 import { ComponentStory } from '@storybook/react'
 import React from 'react'
-import { Icon } from '../icon'
+import { Icon } from '../Icon'
 import { Button } from './Button'
 
 export default {

@@ -1,7 +1,7 @@
 import { ComponentStory } from '@storybook/react'
 import React, { useState } from 'react'
 import { List } from './List'
-import { ListItem } from '../listItem/ListItem'
+import { ListItem } from '../ListItem/ListItem'
 import { IListProps} from './List'
 import { IconName, IconNames } from '../../typings/iconNames'
 

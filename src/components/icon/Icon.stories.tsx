@@ -1,7 +1,7 @@
 import { ComponentStory } from '@storybook/react'
 import React from 'react'
 import { IconName } from '../../typings/iconNames'
-import { Icon } from './icon'
+import { Icon } from './Icon'
 
 const iconNames: IconName[] =  [
 	'arrow_back',
