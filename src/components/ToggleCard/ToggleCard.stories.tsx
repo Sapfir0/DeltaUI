@@ -12,5 +12,5 @@ export default {
 const Template: ComponentStory<typeof ToggleCard> = (args) => <ToggleCard {...args} />
 
 export const Primary = Template.bind({ value: 465, dimension: 'F' })
-Primary.args = { value: 465, dimension: 'F', size: 'large', title: 'ON LIVINGROOM'  }
+Primary.args = { header: 'Outlets', description: 'Active since June 28, 2020', iconName: 'wifi', isStorybook: true  }
 

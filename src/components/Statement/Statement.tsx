@@ -1,24 +1,22 @@
 import React from 'react'
 import classNames from 'classnames'
-
+import {Card} from '../Card'
 import { Icon } from '../Icon'
 
 import styles from './Statement.module.scss'
 
 export interface IStatementProps{
-  value: string | number
+  value: string | number | undefined
   className?: string
   dimension: string
   title?: string
   size: 'large' | 'medium'
+  isStorybook?: boolean
 }
 
-export function Statement({ value, title, dimension, size, className }: IStatementProps) {
+export function Statement({ value, title, dimension, size, className, isStorybook }: IStatementProps) {
   return (
-    <div className={classNames(styles.root, className)}>
-      <span className={styles.title}>
-        {title}
-      </span>
+    <Card header={title} className={classNames(styles.root, className)}>
       <div className={styles.mainBlock}>
         <span
           className={classNames(styles.value, {
@@ -31,9 +29,9 @@ export function Statement({ value, title, dimension, size, className }: IStateme
           <span className={styles.dimension}>
             {dimension}
           </span>
-          <Icon name='arrow_upward' />
+          <Icon name='arrow_upward' isStorybook={isStorybook} />
         </div>
       </div>
-    </div>
+    </Card>
   )
 }

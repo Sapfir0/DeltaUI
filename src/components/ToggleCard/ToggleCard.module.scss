@@ -7,7 +7,28 @@
 }
 
 .switch {
-    --component-width: 65px;
-    --component-height: 25px;
+    --component-width: 30px;
+    --component-height: 20px;
 }
 
+.header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.content {
+    display: flex;
+    gap: 15px;
+    max-width: 150px;
+}
+
+.cardHeader {
+    color: $white-color;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.lastActive {
+    color: $primary-color;
+
+}

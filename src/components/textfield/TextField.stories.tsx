@@ -17,4 +17,5 @@ export const BaseTextfield = Template.bind({})
 BaseTextfield.args = {
   placeholder: '',
   defaultValue: 'Template',
+  isStorybook: true 
 }

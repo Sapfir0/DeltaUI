@@ -1,3 +1,4 @@
+import classnames from 'classnames'
 import classNames from 'classnames'
 import type { HTMLAttributes } from 'react'
 import React from 'react'
@@ -12,14 +13,14 @@ export interface ISwitchSelfProps{
 
 export type ISwitchProps = CombinePropsAndAttributes<ISwitchSelfProps, HTMLAttributes<HTMLLabelElement>>
 
-export function Switch(props: ISwitchProps) {
+export function Switch({className, disabled, ...props}: ISwitchProps) {
   return (
     <label
-      className={styles.root}
+      className={classnames(styles.root, className)}
       {...props}
     >
       <input
-        disabled={props.disabled}
+        disabled={disabled}
         type='checkbox'
       />
       <span className={classNames(styles.round, styles.slider)} />

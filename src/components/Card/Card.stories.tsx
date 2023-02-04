@@ -2,6 +2,7 @@ import { ComponentStory } from "@storybook/react";
 import React from "react";
 import { ICardProps, Card } from "./Card";
 import { Statement } from "../Statement";
+import { Switch } from "../Switch";
 
 export default {
   title: "Example/Card",
@@ -27,6 +28,16 @@ export const StatementCardComponent = StatementCard.bind({});
 StatementCardComponent.args = {
   header: <>Inside</>,
   children: <div>
-    <Statement value={23.0} dimension='F' size='large' />
+    <Statement value={23.0} dimension='F' size='large' isStorybook={true} />
+    </div>,
+};
+
+const SwitchCard: ComponentStory<typeof Card> = createCard;
+
+export const SwitchCardComponent = SwitchCard.bind({});
+SwitchCardComponent.args = {
+  header: <>Inside</>,
+  children: <div>
+    <Switch />
     </div>,
 };
