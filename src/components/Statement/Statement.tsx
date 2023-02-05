@@ -1,6 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
-import {Card} from '../Card'
+
+import { Card } from '../Card'
 import { Icon } from '../Icon'
 
 import styles from './Statement.module.scss'
@@ -16,7 +17,10 @@ export interface IStatementProps{
 
 export function Statement({ value, title, dimension, size, className, isStorybook }: IStatementProps) {
   return (
-    <Card header={title} className={classNames(styles.root, className)}>
+    <Card
+      header={title}
+      className={classNames(styles.root, className)}
+    >
       <div className={styles.mainBlock}>
         <span
           className={classNames(styles.value, {
@@ -29,7 +33,10 @@ export function Statement({ value, title, dimension, size, className, isStoryboo
           <span className={styles.dimension}>
             {dimension}
           </span>
-          <Icon name='arrow_upward' isStorybook={isStorybook} />
+          <Icon
+            name='arrow_upward'
+            isStorybook={isStorybook}
+          />
         </div>
       </div>
     </Card>
