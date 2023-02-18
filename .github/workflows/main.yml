@@ -1,30 +1,10 @@
 name: Build storybook
-
-on:
-  push:
-    branches: [ master, develop ]
-  pull_request:
-    branches: [ master, develop ]
-
-
+on: [push]
 jobs:
-  strategy:
-    matrix:
-      node-version: [16.x]
-      
-  deploy:
-    runs-on: ubuntu-20.04
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
+  Deploy:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup Node
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Dependencies resolving
-        run: npm i
-
+      - name: Build
+      - run: npm i     
       - name: Deploy
-        run: npm run chromatic
+      - run: npm run chromatic
