@@ -1,8 +1,6 @@
 {
 	"extends": [
 		"@sapfir0/eslint-config",
-		"@sapfir0/eslint-config/react",
-		"@sapfir0/eslint-config/typescript",
 		"@sapfir0/eslint-config/typescript-requiring-type-checking",
 		"@sapfir0/eslint-config/jest",
 		"@sapfir0/eslint-config/storybook"

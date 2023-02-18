@@ -1,7 +1,9 @@
 {
   "name": "@sapfir0/delta_kit",
   "version": "0.1.29",
-  "author": "Yurev Alexander",
+  "author": {
+    "name": "Yurev Alexander"
+  },
   "main": "dist/index.js",
   "module": "dist/delta-ui.es5.js",
   "typings": "dist/index.d.ts",
@@ -16,7 +18,8 @@
     "test:prod": "npm run lint && npm run test -- --no-cache",
     "precommit": "lint-staged",
     "start": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "chromatic": "npx chromatic --project-token=acc362c8eee9"
   },
   "dependencies": {
     "@babel/core": "^7.18.13",
@@ -34,7 +37,7 @@
     "@babel/eslint-parser": "7.16.3",
     "@commitlint/cli": "^7.1.2",
     "@commitlint/config-conventional": "^7.1.2",
-    "@sapfir0/eslint-config": "0.0.7",
+    "@sapfir0/eslint-config": "0.0.8",
     "@storybook/addon-actions": "^6.5.10",
     "@storybook/addon-essentials": "^6.5.10",
     "@storybook/addon-interactions": "^6.5.10",
@@ -51,6 +54,7 @@
     "@types/react-dom": "^18.0.6",
     "@typescript-eslint/eslint-plugin": "^5.35.1",
     "@typescript-eslint/parser": "^5.35.1",
+    "chromatic": "^6.17.0",
     "cross-env": "^5.2.0",
     "eslint": "^8.23.0",
     "eslint-plugin-babel": "^5.3.1",
@@ -111,5 +115,7 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "@sapfir0/delta_kit@0.1.29"
 }
