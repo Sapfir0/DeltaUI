@@ -5,6 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Build
-      - run: npm i     
+        run: npm i     
       - name: Deploy
-      - run: npm run chromatic
+        run: npm run chromatic
