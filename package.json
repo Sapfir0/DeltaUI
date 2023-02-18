@@ -18,7 +18,7 @@
     "precommit": "lint-staged",
     "start": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "chromatic": "npx chromatic --project-token=acc362c8eee9"
+    "chromatic": "npx chromatic --project-token=CHROMATIC_PROJECT_TOKEN"
   },
   "dependencies": {
     "@babel/core": "^7.18.13",
