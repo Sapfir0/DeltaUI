@@ -6,6 +6,13 @@
     font-family: $default-font;
 }
 
+.header {
+    color: $grey-color;
+    margin-bottom: 2px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
 .title {
     color: $grey-color;
     font-weight: 600;

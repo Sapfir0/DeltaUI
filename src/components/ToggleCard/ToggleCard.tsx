@@ -18,7 +18,7 @@ export interface IToggleCardProps{
 export function ToggleCard({ isStorybook, description, header, iconName }: IToggleCardProps) {
   return (
     <Card
-      header={(
+      headerBlock={(
         <div className={styles.header}>
           <Switch className={styles.switch} />
           {' '}

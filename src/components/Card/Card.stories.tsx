@@ -26,9 +26,19 @@ const StatementCard: ComponentStory<typeof Card> = createCard;
 
 export const StatementCardComponent = StatementCard.bind({});
 StatementCardComponent.args = {
-  header: <>Inside</>,
+  header: 'Inside',
   children: <div>
-    <Statement value={23.0} dimension='F' size='large' isStorybook={true} />
+    <Statement value={23.0} dimension='F' size='large' isStorybook={true} isIncreasing={true} />
+    </div>,
+};
+
+const MultipleStatementCard: ComponentStory<typeof Card> = createCard;
+
+export const MultipleStatementCardComponent = MultipleStatementCard.bind({});
+MultipleStatementCardComponent.args = {
+  children: <div>
+    <Statement value={23.0} dimension='F' size='large' title='Inside' isStorybook={true} isIncreasing={true} />
+    <Statement value={43.0} dimension='F' size='large' title='Outside' isStorybook={true} isIncreasing={true} />
     </div>,
 };
 

@@ -13,12 +13,13 @@ export interface IStatementProps{
   title?: string
   size: 'large' | 'medium'
   isStorybook?: boolean
+  isIncreasing: boolean
 }
 
-export function Statement({ value, title, dimension, size, className, isStorybook }: IStatementProps) {
+export function Statement({ value, title, dimension, size, className, isStorybook, isIncreasing }: IStatementProps) {
   return (
     <Card
-      header={title}
+      headerBlock={<h2 className={styles.header}>{title}</h2>}
       className={classNames(styles.root, className)}
     >
       <div className={styles.mainBlock}>
@@ -34,7 +35,7 @@ export function Statement({ value, title, dimension, size, className, isStoryboo
             {dimension}
           </span>
           <Icon
-            name='arrow_upward'
+            name={isIncreasing ? 'arrow_upward' : 'arrow_downward'}
             isStorybook={isStorybook}
           />
         </div>
