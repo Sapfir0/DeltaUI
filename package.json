@@ -1,6 +1,6 @@
 {
   "name": "@sapfir0/delta_kit",
-  "version": "0.1.31",
+  "version": "0.1.32",
   "author": {
     "name": "Yurev Alexander"
   },
@@ -11,6 +11,7 @@
   "scripts": {
     "lint": "eslint .",
     "prebuild": "rimraf dist",
+    "prepublish": "yarn build",
     "build": "tsc && rollup -c rollup.config.ts --environment NODE_ENV:production && du -hs ./dist",
     "test": "jest --coverage",
     "test:watch": "jest --coverage --watch",
