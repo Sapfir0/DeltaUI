@@ -1,4 +1,4 @@
-export * from './components/Button/B'
+export * from './components/Button/Button'
 export * from './components/Card/Card'
 export * from './components/Icon/Icon'
 export * from './components/List/List'
