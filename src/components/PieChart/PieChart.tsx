@@ -1,3 +1,5 @@
+/* eslint no-magic-numbers: 0 */
+
 import Chart from 'react-apexcharts'
 import React from 'react'
 

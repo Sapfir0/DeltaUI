@@ -1,4 +1,3 @@
-export type IconName = IconNames[number]
 export type IconNames = [
   'arrow_back',
   'arrow_downward',
@@ -27,3 +26,5 @@ export type IconNames = [
   'visibility',
   'wifi'
 ]
+
+export type IconName = IconNames[number]
