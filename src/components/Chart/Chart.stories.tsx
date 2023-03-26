@@ -1,6 +1,6 @@
 import { ComponentStory } from "@storybook/react";
 import React from "react";
-import { Chart } from "./PieChart";
+import { Chart } from "./Chart";
 
 export default {
   title: "Example/Chart",
