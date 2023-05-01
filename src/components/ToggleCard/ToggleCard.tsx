@@ -18,6 +18,7 @@ export interface IToggleCardProps{
 export function ToggleCard({ isStorybook, description, header, iconName }: IToggleCardProps) {
   return (
     <Card
+      className={styles.root}
       headerBlock={(
         <div className={styles.header}>
           <Switch className={styles.switch} />
@@ -29,6 +30,7 @@ export function ToggleCard({ isStorybook, description, header, iconName }: ITogg
         <Icon
           isStorybook={isStorybook}
           name={iconName}
+          className={styles.image}
         />
         <div>
           <h2 className={styles.cardHeader}>

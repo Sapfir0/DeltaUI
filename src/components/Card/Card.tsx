@@ -1,5 +1,6 @@
 import type { HTMLAttributes } from 'react'
 import React from 'react'
+import classNames from 'classnames'
 
 import type { CombinePropsAndAttributes } from '../../utils/types'
 
@@ -14,10 +15,10 @@ export interface ICardSelfProps{
 
 export type ICardProps = CombinePropsAndAttributes<ICardSelfProps, HTMLAttributes<HTMLDivElement>>
 
-export function Card({ header, headerBlock, children, ...props }: ICardProps) {
+export function Card({ header, headerBlock, className, children, ...props }: ICardProps) {
   return (
     <div
-      className={styles.root}
+      className={classNames(styles.root, className)}
       {...props}
     >
       {headerBlock ? headerBlock : <h2 className={styles.header}>

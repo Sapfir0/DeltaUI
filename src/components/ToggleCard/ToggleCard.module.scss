@@ -1,9 +1,9 @@
 @import '../../styles/vars.scss';
 
 .root {
-    display: flex;
-    flex-direction: column;
     font-family: $default-font;
+    width: fit-content;
+    min-width: 180px;
 }
 
 .switch {
@@ -26,9 +26,14 @@
     color: $white-color;
     margin-top: -10px;
     margin-bottom: 10px;
+    font-size: 18px;
 }
 
 .lastActive {
     color: $primary-color;
 
+}
+
+.image {
+    width: 70px;
 }
